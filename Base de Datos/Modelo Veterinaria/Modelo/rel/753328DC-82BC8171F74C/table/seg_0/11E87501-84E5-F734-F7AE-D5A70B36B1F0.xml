@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="11E87501-84E5-F734-F7AE-D5A70B36B1F0" name="RAZA">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>E0C77780-5BCB-C658-7BB4-8981B92FB3D9</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDRAZA" id="0895A1E8-10CA-5715-7F09-A3A53468F3E3">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>C887DC54-9FF3-B7C7-63ED-EF46DA591E33</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="41C1185C-ABC3-BF3F-FB3D-3EC9F4D45DB0">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>90A5CECF-0211-F13C-CEAB-E862A778D735</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDTIPO" id="79BEDE29-1370-F8CC-DB1D-A94C31DF291B">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>51BCFC5B-AB62-9BD1-F047-955A4DFCC0FB</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A04C11D7-9C41-1B74-0895-5592E1F9FCF8" referredColumn="404F2E2F-621C-5A93-2172-38D423161C0E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="4AF28995-ED4A-0262-DEAB-B84C569C615D" name="RAZA_PK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>831F870E-5737-33AF-9AFD-9F5EE1A1A41A</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="0895A1E8-10CA-5715-7F09-A3A53468F3E3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A00CF5EC-9D05-D2D2-D9E1-C4D2175F7727" name="TIPO_MASCOTA_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>05F5EA3C-449B-73E6-DDEE-007914CEBE6E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="79BEDE29-1370-F8CC-DB1D-A94C31DF291B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

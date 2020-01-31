@@ -1,0 +1,137 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E52ED2FF-D3E9-016C-CE59-2D1BAFF4E998" name="CITA">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>EED46A2A-81F0-54B1-D706-E8EC5F84FDFF</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCITA" id="A6FB8E2B-DDC6-D5C5-9A8D-ED44540E217E">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>4063D2E9-7C7D-B0F9-5B80-1FECE508C3B8</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="FECHA" id="0AE27AF0-FBCE-96C3-F6F6-B627B3AAA940">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>D99A1DC5-8F51-A516-76E1-D665AAF266D4</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="HORA" id="DB74D7B3-89BD-B652-7346-0F6979D706F6">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>1A16B24E-6B2F-2DFC-00CF-B6DFE182A018</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDMASCOTA" id="4C68047B-5D21-3B51-74F9-CA6DAE3BFD56">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>9F0FF2C0-691C-DF88-C54C-47229292246F</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0001B5BA-533F-E7A0-7F40-A96531E1E49F" referredColumn="E75D7226-1C63-0E8C-1A6D-C026E772BECF"/>
+</associations>
+</Column>
+<Column name="IDTIPO" id="A3F6C50B-6CE5-6594-3F85-8115CDECFBC4">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>B929FBF2-73F4-2579-2790-0B5B0866CFE4</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C7DA6C58-ADEB-85A1-4CFC-54A5BABBE8A9" referredColumn="BB0905BA-66C6-DC55-49A7-E761BBB0345E"/>
+</associations>
+</Column>
+<Column name="IDESTADO" id="225CC83A-07EA-6ECD-4573-B9C12DE84332">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>118814DB-75FE-E457-993F-588FA8EAE5D7</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FE01A6B4-E814-68EC-BE4B-EE1F320F4B3F" referredColumn="1BF2FC63-53E1-93F7-319F-FDC3B64F9F9B"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="D2E60F7C-C3C5-3B03-8931-E20FC69AE24A" name="CITA_PK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>D7FFFB0C-9796-9515-D4AC-1AA7B9A49F67</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A6FB8E2B-DDC6-D5C5-9A8D-ED44540E217E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E9B491CD-F0FC-4C8A-9050-847C86008EC6" name="TIPO_CONSULTA_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>D985796C-D7F1-361B-7A94-0A7820250DA2</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A3F6C50B-6CE5-6594-3F85-8115CDECFBC4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3752D80E-00E6-BA28-4DE3-93C2F14D28A0" name="ESTADO_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>15852DFC-B788-5D09-3635-93F119B1A5FD</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="225CC83A-07EA-6ECD-4573-B9C12DE84332"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="374F91C0-CA53-A92E-3A3C-F5A78CDB9BEC" name="MASCOTA_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>06592C79-0E88-D5A2-84A9-0E6659B7CA5B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="4C68047B-5D21-3B51-74F9-CA6DAE3BFD56"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

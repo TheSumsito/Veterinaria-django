@@ -1,0 +1,75 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="FA8EAD2C-CB7B-CF59-CB30-4383D211EC2D" name="CONSULTA">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>3C198D1F-0D54-2B6D-8A0B-554044C86DA0</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCONSULTA" id="7017AEB9-7DA7-9B6F-6833-B3AD4410BC85">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>15D2A0D8-1CF9-544F-D27D-B52260622767</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="F32D89CA-EF7B-204E-D055-D9CDB48E7610">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>15473740-2013-206D-707D-240654C330C7</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDCITA" id="ED51673C-4511-E5E1-E91D-4CF9C7F5F87C">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>D54E8EFE-90FB-5D5A-230B-40197FBD1876</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="194168D0-67A3-0A3D-AAE4-F3FDB3A08DD6" referredColumn="A6FB8E2B-DDC6-D5C5-9A8D-ED44540E217E"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="FBCA8A97-C0AF-7F41-8472-0C8C96FC20A2" name="CONSULTA_PK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>98EBC8AD-0598-F513-609B-1EDF24E89281</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7017AEB9-7DA7-9B6F-6833-B3AD4410BC85"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="EECA6CE4-6BDF-4299-FCA7-F3573159D7B4" name="CITA_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>C200BB95-8C96-EB90-0246-AF70254D330E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="ED51673C-4511-E5E1-E91D-4CF9C7F5F87C"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

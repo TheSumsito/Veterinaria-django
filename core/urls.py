@@ -14,4 +14,8 @@ urlpatterns = [
     path('cerrar/', cerrar, name="cerrar"),
     path('Administrador/', homeAdmin, name="homeAdmin"),
     path('Usuario/', homeUser, name="homeUser"),
+
+
+    #! VISTAS USUARIO
+    path('agendar-cita/', AgendarCita, name="AgendarCita"),
 ]

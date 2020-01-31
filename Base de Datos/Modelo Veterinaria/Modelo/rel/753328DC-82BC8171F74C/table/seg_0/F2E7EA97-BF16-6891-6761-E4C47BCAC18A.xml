@@ -1,0 +1,163 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="F2E7EA97-BF16-6891-6761-E4C47BCAC18A" name="MASCOTA">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>8E00BC3F-F704-653E-505F-3714B55FC1DF</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDMASCOTA" id="E75D7226-1C63-0E8C-1A6D-C026E772BECF">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>FB260812-A196-9FA4-D320-E32671A8D60B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOMBRE" id="0B03D09D-22FA-067C-ABBB-D5B136D6699A">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>7813F7C1-20AF-18B6-9485-2DF0F441727C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="COLOR" id="C6641AA3-9A09-4CE3-BEBC-2E476F2A67FB">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>8917FB73-2E8D-0187-3813-8E2D45C08DCE</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TAMAÑO" id="C3CDE839-4BBD-6F6B-431F-87D103C14F1D">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>18DF8F46-9BB1-5C7C-862B-42B744883BF7</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PESO" id="F97C9B19-AC71-7D5E-2205-CED5747E6458">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>8FCC9640-8310-E970-BDFD-A8A615912B10</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RUTPERSONA" id="C404A74C-ABBF-5DAE-96B6-626058048C43">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>EFB56FA6-E1DA-DC2F-BA03-2E3DE7E528B1</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="982E6B9E-8145-B45E-3693-3CF5F35A9BE3" referredColumn="86AF5198-366E-EA02-EA35-9D1E8523B864"/>
+</associations>
+</Column>
+<Column name="IDRAZA" id="3F47F773-A0FB-7C55-1893-C51807D76E08">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>556636AA-FE14-5E7B-5FF1-7845151C3702</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="FC7FCD3F-1E63-80D8-4D5C-BC8CA143BA28" referredColumn="0895A1E8-10CA-5715-7F09-A3A53468F3E3"/>
+</associations>
+</Column>
+<Column name="IDGENERO" id="92D71C8F-9172-8B4C-EB89-446FBB800E09">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>58E19DE3-81E3-98CD-F6A8-66533C38CF0D</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="A6C449C4-B8A2-6787-E3F1-7C73635D1ED6" referredColumn="AE83A239-51E3-3C2B-68E1-4A8689BE52CA"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="1DD2300A-CDBB-D4E0-DD8E-429193A1934E" name="MASCOTA_PK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>338D7204-1968-037E-B6D1-5BCFD615FCCE</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E75D7226-1C63-0E8C-1A6D-C026E772BECF"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4D98D3F2-EE25-9E6D-B04F-6EAF2B38F136" name="RAZA_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>388EEB5D-A460-2F15-93EF-7D8974F67D56</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3F47F773-A0FB-7C55-1893-C51807D76E08"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B86CA917-9D93-A9BE-3492-B88B204D7D47" name="GENERO_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>FA971CA2-9581-031F-921E-447B95733E53</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92D71C8F-9172-8B4C-EB89-446FBB800E09"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="02CF5D2E-CD7F-EF55-796F-BF71EBAAAAEB" name="PERSONA_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>B0ADDCFF-1365-E591-C0E1-5C88D6E138B5</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C404A74C-ABBF-5DAE-96B6-626058048C43"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

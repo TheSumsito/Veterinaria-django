@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Contacto, Provincia, Comuna, Persona, Usuario
+from .models import Contacto, Provincia, Comuna, Persona, Usuario, Mascota, Raza, TipoConsulta, Cita
 
 #! IMPORTACION PARA TRABAJAR CON USUARIO
 from django.contrib import auth
@@ -29,7 +29,8 @@ def homeUser(request):
     user = auth.authenticate()
     rutpersona = request.user.username
     persona = Persona.objects.get(RutPersona=rutpersona)
-    return render(request, '../templates/usuario/index.htm', {'per':persona})
+    mascotas = Mascota.objects.filter(RutPersona=rutpersona)
+    return render(request, '../templates/usuario/index.htm', {'per':persona, 'mascotas': mascotas})
 
 def nosotros(request):
     return render(request, '../templates/nosotros.htm')
@@ -134,3 +135,34 @@ def RegistroUsuario(request):
         return render(request, '../templates/registro.htm', {'comuna': com, 'provincia': pro})
     else:
         return render(request, '../templates/registro.htm', {'comuna':com, 'provincia':pro})
+
+#! ARREGLAR ESTA VIEWS
+def AgendarCita(request):
+    user = auth.authenticate()
+    rutpersona = request.user.username
+    persona = Persona.objects.get(RutPersona=rutpersona)
+    mascotas = Mascota.objects.filter(RutPersona=rutpersona)
+    tipo = TipoConsulta.objects.all()
+
+    if request.POST:
+        nombreMascota = request.POST.get("cboMascota", "")
+        tipoConsulta = request.POST.get("cboConsulta", "")
+        fecha = request.POST.get("txtFecha", "")
+        hora = request.POST.get("txtHora", "")
+
+        #!INSTANCES
+        tipo_id = TipoConsulta.objects.get(IdTipo=tipoConsulta)
+        mascota_id = Mascota.objects.get(IdMascota=nombreMascota)
+
+        cita = Cita(
+            IdCita=234234,
+            Descripcion = "N/A",
+            Fecha = fecha,
+            Hora = hora,
+            IdMascota=nombreMascota,
+            IdTipo=tipo_id,     
+            Estado=False
+        )
+        cita.save()
+        return render(request, '../templates/usuario/agendar-cita.htm', {'name':nombreMascota, 'tipoConsulta': tipo_id, 'fecha': fecha, 'hora': hora})
+    return render(request, '../templates/usuario/agendar-cita.htm', {'per':persona, 'mascotas': mascotas, 'tipo': tipo})

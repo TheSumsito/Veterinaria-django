@@ -92,14 +92,6 @@ class Mascota(models.Model):
     def __str__(self):
         return self.Nombre
 
-
-class Estado(models.Model):
-    IdEstado = models.IntegerField(primary_key=True)
-    Descripcion = models.CharField(max_length=50)
-
-    def __str__(self):
-        return self.Descripcion
-
 class TipoConsulta(models.Model):
     IdTipo = models.IntegerField(primary_key=True)
     Descripcion = models.CharField(max_length=50)
@@ -114,7 +106,7 @@ class Cita(models.Model):
     Hora = models.TimeField()
     IdMascota = models.ForeignKey(Mascota, on_delete=models.CASCADE)
     IdTipo = models.ForeignKey(TipoConsulta, on_delete=models.CASCADE)
-    IdEstado = models.ForeignKey(Estado, on_delete=models.CASCADE)
+    Estado = models.BooleanField()
 
     def __str__(self):
         return self.Descripcion

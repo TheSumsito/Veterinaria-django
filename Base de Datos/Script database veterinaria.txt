@@ -1,0 +1,185 @@
+CREATE TABLE cita (
+    idcita      NUMERIC NOT NULL,
+    fecha       DATETIME NOT NULL,
+    hora        DATETIME NOT NULL,
+    idmascota   NUMERIC NOT NULL,
+    idtipo      NUMERIC NOT NULL,
+    idestado    NUMERIC NOT NULL
+);
+
+ALTER TABLE cita ADD CONSTRAINT cita_pk PRIMARY KEY ( idcita );
+
+CREATE TABLE comuna (
+    idcomuna      NUMERIC NOT NULL,
+    descripcion   VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE comuna ADD CONSTRAINT comuna_pk PRIMARY KEY ( idcomuna );
+
+CREATE TABLE consulta (
+    idconsulta    NUMERIC NOT NULL,
+    descripcion   VARCHAR(50) NOT NULL,
+    idcita        NUMERIC NOT NULL
+);
+
+ALTER TABLE consulta ADD CONSTRAINT consulta_pk PRIMARY KEY ( idconsulta );
+
+CREATE TABLE contacto (
+    correo     VARCHAR(50) NOT NULL,
+    nombre     VARCHAR(50) NOT NULL,
+    telefono   NUMERIC NOT NULL,
+    asunto     VARCHAR(100) NOT NULL,
+    mensaje    VARCHAR(100) NOT NULL
+);
+
+ALTER TABLE contacto ADD CONSTRAINT contacto_pk PRIMARY KEY ( correo );
+
+CREATE TABLE estado (
+    idestado      NUMERIC NOT NULL,
+    descripcion   VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE estado ADD CONSTRAINT estado_pk PRIMARY KEY ( idestado );
+
+CREATE TABLE mascota (
+    idmascota    NUMERIC NOT NULL,
+    nombre       VARCHAR(50) NOT NULL,
+    color        VARCHAR(50) NOT NULL,
+    tamaño       VARCHAR(50) NOT NULL,
+    peso         NUMERIC NOT NULL,
+    rutpersona   VARCHAR(50) NOT NULL,
+    idraza       NUMERIC NOT NULL
+);
+
+ALTER TABLE mascota ADD CONSTRAINT mascota_pk PRIMARY KEY ( idmascota );
+
+CREATE TABLE persona (
+    rutpersona   VARCHAR(50) NOT NULL,
+    nombre       VARCHAR(50) NOT NULL,
+    apellido     VARCHAR(50) NOT NULL,
+    correo       VARCHAR(50) NOT NULL,
+    telefono     NUMERIC NOT NULL,
+    direccion    VARCHAR(50) NOT NULL,
+    idcomuna     NUMERIC NOT NULL
+);
+
+ALTER TABLE persona ADD CONSTRAINT persona_pk PRIMARY KEY ( rutpersona );
+
+CREATE TABLE raza (
+    idraza        NUMERIC NOT NULL,
+    descripcion   VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE raza ADD CONSTRAINT raza_pk PRIMARY KEY ( idraza );
+
+CREATE TABLE tipo_consulta (
+    idtipo        NUMERIC NOT NULL,
+    descripcion   VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE tipo_consulta ADD CONSTRAINT tipo_consulta_pk PRIMARY KEY ( idtipo );
+
+CREATE TABLE usuario (
+    rutpersona   VARCHAR(50) NOT NULL,
+    contrasena   VARCHAR(50) NOT NULL,
+    usuario_id   NUMERIC NOT NULL
+);
+
+ALTER TABLE usuario ADD CONSTRAINT usuario_pk PRIMARY KEY ( usuario_id );
+
+ALTER TABLE consulta
+    ADD CONSTRAINT cita_fk FOREIGN KEY ( idcita )
+        REFERENCES cita ( idcita );
+
+ALTER TABLE persona
+    ADD CONSTRAINT comuna_fk FOREIGN KEY ( idcomuna )
+        REFERENCES comuna ( idcomuna );
+
+ALTER TABLE cita
+    ADD CONSTRAINT estado_fk FOREIGN KEY ( idestado )
+        REFERENCES estado ( idestado );
+
+ALTER TABLE cita
+    ADD CONSTRAINT mascota_fk FOREIGN KEY ( idmascota )
+        REFERENCES mascota ( idmascota );
+
+ALTER TABLE mascota
+    ADD CONSTRAINT persona_fk FOREIGN KEY ( rutpersona )
+        REFERENCES persona ( rutpersona );
+
+ALTER TABLE usuario
+    ADD CONSTRAINT persona_fkv1 FOREIGN KEY ( rutpersona )
+        REFERENCES persona ( rutpersona );
+
+ALTER TABLE mascota
+    ADD CONSTRAINT raza_fk FOREIGN KEY ( idraza )
+        REFERENCES raza ( idraza );
+
+ALTER TABLE cita
+    ADD CONSTRAINT tipo_consulta_fk FOREIGN KEY ( idtipo )
+        REFERENCES tipo_consulta ( idtipo );
+
+
+
+/* ------------------------------------------------------------------- */
+
+
+CREATE TABLE genero (
+    idgenero      NUMERIC NOT NULL,
+    descripcion   VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE genero ADD CONSTRAINT genero_pk PRIMARY KEY ( idgenero );
+
+ALTER TABLE MASCOTA ADD idgenero NUMERIC NOT NULL
+
+ALTER TABLE mascota
+    ADD CONSTRAINT genero_fk FOREIGN KEY ( idgenero )
+        REFERENCES genero ( idgenero );
+
+
+
+CREATE TABLE tipo_mascota (
+    idtipo      NUMERIC NOT NULL,
+    descripcion   VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE tipo_mascota ADD CONSTRAINT tipo_mascota_pk PRIMARY KEY ( idtipo );
+
+ALTER TABLE MASCOTA ADD idtipo NUMERIC NOT NULL
+
+ALTER TABLE mascota
+    ADD CONSTRAINT tipo_mascota_fk FOREIGN KEY ( idtipo )
+        REFERENCES tipo_mascota ( idtipo );
+
+
+
+
+CREATE TABLE tipo_usuario (
+    idtipo      NUMERIC NOT NULL,
+    descripcion   VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE tipo_usuario ADD CONSTRAINT tipo_usuario_pk PRIMARY KEY ( idtipo );
+
+ALTER TABLE usuario ADD idtipo NUMERIC NOT NULL
+
+ALTER TABLE usuario
+    ADD CONSTRAINT tipo_usuario_fk FOREIGN KEY ( idtipo )
+        REFERENCES tipo_usuario ( idtipo );
+
+
+
+
+CREATE TABLE provincia (
+    idprovincia      NUMERIC NOT NULL,
+    descripcion   VARCHAR(50) NOT NULL
+);
+
+ALTER TABLE provincia ADD CONSTRAINT provincia_pk PRIMARY KEY ( idprovincia );
+
+ALTER TABLE comuna ADD idprovincia NUMERIC NOT NULL
+
+ALTER TABLE comuna
+    ADD CONSTRAINT provincia_fk FOREIGN KEY ( idprovincia )
+        REFERENCES provincia ( idprovincia );

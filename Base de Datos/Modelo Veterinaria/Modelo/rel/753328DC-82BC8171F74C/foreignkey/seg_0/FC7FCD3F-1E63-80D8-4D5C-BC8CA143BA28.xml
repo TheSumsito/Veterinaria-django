@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="FC7FCD3F-1E63-80D8-4D5C-BC8CA143BA28" containerWithKeyObject="F2E7EA97-BF16-6891-6761-E4C47BCAC18A" localFKIndex="4D98D3F2-EE25-9E6D-B04F-6EAF2B38F136" name="RAZA_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>388EEB5D-A460-2F15-93EF-7D8974F67D56</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<referredTableLongName>RAZA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>11E87501-84E5-F734-F7AE-D5A70B36B1F0</referredTableID>
+<keyObject>4AF28995-ED4A-0262-DEAB-B84C569C615D</keyObject>
+<referredKeyID>4AF28995-ED4A-0262-DEAB-B84C569C615D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>IDRAZA</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

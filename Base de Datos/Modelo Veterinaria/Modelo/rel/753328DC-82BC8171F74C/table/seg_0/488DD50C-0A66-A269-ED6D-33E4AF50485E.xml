@@ -1,0 +1,74 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="488DD50C-0A66-A269-ED6D-33E4AF50485E" name="COMUNA">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>7B85E8CD-01C8-2606-484F-D93017F5F991</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="IDCOMUNA" id="3B3499F9-62A1-9CB7-4619-C90CF1B6EC77">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>ECD96B95-FE66-9C20-CE52-B194C4227BED</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPCION" id="C690855A-2C9D-CF40-75BC-E89B27D3BD80">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>7ECAB446-341F-5100-5730-BED430AD7D5C</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDPROVINCIA" id="92BCBA38-FA8C-FD70-781E-596B7A9D9E62">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-06 02:17:14 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C123EF1A-4254-37AC-1040-2E11F8F81137" referredColumn="2882E0D6-FE90-87FA-D514-6CB015C63E6C"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="00132549-6CEC-C409-9599-0BF7AEB2D15D" name="COMUNA_PK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>C17414A6-EC72-3CE8-B4D5-24AB8A8DAF21</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3B3499F9-62A1-9CB7-4619-C90CF1B6EC77"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="08D9F8F3-8D69-BCB6-8B7B-133652AB4F68" name="PROVINCIA_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-06 02:17:14 UTC</createdTime>
+<generatorID>C17414A6-EC72-3CE8-B4D5-24AB8A8DAF21</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="92BCBA38-FA8C-FD70-781E-596B7A9D9E62"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

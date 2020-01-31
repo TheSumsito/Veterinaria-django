@@ -4,5 +4,39 @@
 
 
 {% block body%}
-    <h1>usuario</h1>
+<div class="container-presentacion">
+    <div class="titulo">
+        <h1>Bienvenido <span>{{per.Nombre}}</span></h1>
+    </div>
+</div>
+
+<div class="container-inicio">
+    <div class="titulo">
+        <h1>Mis Mascotas</h1>
+    </div>
+
+    {% for mas in mascotas %}
+    <div class="detalle-mascota-1">
+        <div class="nombre">
+            <h1>{{mas.Nombre}}</h1>
+        </div>
+        <div class="raza">
+            <p>Mi Raza:</p>
+            <input type="text" name="txtRaza" id="txtRaza" value="{{mas.IdRaza}}" readonly>
+        </div>
+        <div class="color">
+            <p>Mi color de Piel: </p>
+            <input type="text" name="txtColor" id="txtColor" value="{{mas.Color}}" readonly>
+        </div>
+        <div class="peso">
+            <p>Mi Peso: </p>
+            <input type="text" name="txtPeso" id="txtPeso" value="{{mas.Peso}}" readonly>
+        </div>
+        <div class="tamano">
+            <p>Mi tamaño es: </p>
+            <input type="text" name="txtTamano" id="txtTamano" value="{{mas.IdTamano}}" readonly>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock body %}

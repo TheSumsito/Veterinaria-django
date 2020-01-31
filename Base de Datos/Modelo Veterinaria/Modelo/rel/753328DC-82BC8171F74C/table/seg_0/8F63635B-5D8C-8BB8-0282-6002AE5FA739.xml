@@ -1,0 +1,101 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="8F63635B-5D8C-8BB8-0282-6002AE5FA739" name="USUARIO">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>5D38EB7D-C285-D369-1B40-656DA516B8CB</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="RUTPERSONA" id="653DDB42-DEDD-F0C9-F89F-EAA1F0441D3B">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>437C8BF4-9918-4E2E-A1EF-719E4CBB0E38</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="33389798-487C-7C87-F86B-27EBDE8F1636" referredColumn="86AF5198-366E-EA02-EA35-9D1E8523B864"/>
+</associations>
+</Column>
+<Column name="CONTRASENA" id="BB753B33-64C7-1B79-FB3E-067A22E5123E">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>6B77E463-04BC-B481-9434-52AFC45A49B5</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IDTIPO" id="1E638260-B9C2-5E07-7073-FC5A52F266B4">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>0C3F65DA-B07B-A4EC-A936-D06EB4E47647</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3A6519D8-1DF3-BE71-CDB5-12F1EA5624F2" referredColumn="4CD61C1B-BCF5-3099-9F4F-B6CF1799EBD3"/>
+</associations>
+</Column>
+<Column name="USUARIO_ID" id="02BB5279-783E-207F-CFE1-23FCB0B93D26">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementColumn>true</autoIncrementColumn>
+<identityColumn>true</identityColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<isSurrogateColumn>true</isSurrogateColumn>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="26BD4DB7-F017-5530-A6EC-41DCB955E15F" name="USUARIO_PK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<indexColumnUsage>
+<colUsage columnID="02BB5279-783E-207F-CFE1-23FCB0B93D26"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3F7092FE-25D0-C000-1FA7-25B2605DCC33" name="TIPO_USUARIO_FK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>767A6DE5-BC4D-1456-0429-9387693898F7</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1E638260-B9C2-5E07-7073-FC5A52F266B4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3EAE7EE6-1322-A31E-69C9-26BB5197EE49" name="PERSONA_FKv1">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:46:52 UTC</createdTime>
+<generatorID>FCCE41BD-1EEE-2257-584B-C41333E87C4A</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="653DDB42-DEDD-F0C9-F89F-EAA1F0441D3B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

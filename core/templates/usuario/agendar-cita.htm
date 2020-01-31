@@ -1,0 +1,49 @@
+{% extends 'complements/principal.htm' %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<form method="POST" class="container-agendar">
+    {% csrf_token %}
+    <div class="titulo">
+        <h1>Agendar Cita</h1>
+    </div>
+
+
+    <div class="mascota">
+        <p>¿Nombre de su Mascota?</p>
+        <select name="cboMascota" id="cboMascota">
+            <option>Seleccione</option>
+            {% for mas in mascotas %}
+                <option value="{{mas.IdMascota}}">{{mas.Nombre}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="tipo">
+        <p>Tipo de consulta: </p>
+        <select name="cboTipo" id="cboTipo">
+            <option>Seleccione</option>
+            {% for tipo in tipo %}
+                <option value="{{tipo.IdTipo}}">{{tipo.Descripcion}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div class="fecha">
+        <p>Selecione Fecha: </p>
+        <input type="date" name="txtFecha" id="txtFecha">
+    </div>
+
+    <div class="hora">
+        <p>Seleccionar Hora: </p>
+        <input type="time" name="txtHora" id="txtHora">
+    </div>
+
+    <a href="">{{name}}</a>
+    <div class="boton">
+        <input type="submit" value="Ingresar Solicitud">
+    </div>
+</form>
+{% endblock body %}

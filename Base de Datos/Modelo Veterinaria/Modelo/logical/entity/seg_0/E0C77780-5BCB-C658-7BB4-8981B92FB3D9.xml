@@ -1,0 +1,86 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="E0C77780-5BCB-C658-7BB4-8981B92FB3D9" name="RAZA">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 01:55:52 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDRAZA" id="C887DC54-9FF3-B7C7-63ED-EF46DA591E33">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 01:55:55 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DESCRIPCION" id="90A5CECF-0211-F13C-CEAB-E862A778D735">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 01:56:04 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>50</dataTypeSize>
+<ownDataTypeParameters>50,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDMASCOTA" id="99F502FE-2245-7B55-AF30-B27F2A6E3945">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 01:57:37 UTC</createdTime>
+<generatorID>388EEB5D-A460-2F15-93EF-7D8974F67D56</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<referedAttribute>FB260812-A196-9FA4-D320-E32671A8D60B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDTIPO" id="51BCFC5B-AB62-9BD1-F047-955A4DFCC0FB">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 21:45:51 UTC</createdTime>
+<generatorID>05F5EA3C-449B-73E6-DDEE-007914CEBE6E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<referedAttribute>86128B29-356F-25E2-FF90-F852F89226DB</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="831F870E-5737-33AF-9AFD-9F5EE1A1A41A" name="RAZA PK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 01:56:03 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>C887DC54-9FF3-B7C7-63ED-EF46DA591E33</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

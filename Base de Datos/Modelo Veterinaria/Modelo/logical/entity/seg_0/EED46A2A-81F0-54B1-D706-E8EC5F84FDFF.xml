@@ -1,0 +1,125 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="EED46A2A-81F0-54B1-D706-E8EC5F84FDFF" name="CITA">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-04 17:59:35 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IDCITA" id="4063D2E9-7C7D-B0F9-5B80-1FECE508C3B8">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-04 18:13:40 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="FECHA" id="D99A1DC5-8F51-A516-76E1-D665AAF266D4">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-04 18:14:14 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="HORA" id="1A16B24E-6B2F-2DFC-00CF-B6DFE182A018">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-04 18:14:19 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDMASCOTA" id="9F0FF2C0-691C-DF88-C54C-47229292246F">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-04 18:34:22 UTC</createdTime>
+<generatorID>06592C79-0E88-D5A2-84A9-0E6659B7CA5B</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<referedAttribute>FB260812-A196-9FA4-D320-E32671A8D60B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDCONSULTA" id="6C7BE904-E233-AEF0-6CA1-8614BB05D2CD">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-04 18:34:34 UTC</createdTime>
+<generatorID>C200BB95-8C96-EB90-0246-AF70254D330E</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<referedAttribute>15D2A0D8-1CF9-544F-D27D-B52260622767</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDTIPO" id="B929FBF2-73F4-2579-2790-0B5B0866CFE4">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 01:54:21 UTC</createdTime>
+<generatorID>D985796C-D7F1-361B-7A94-0A7820250DA2</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<referedAttribute>99A495B4-E026-5627-2C8D-9FF9CF21114C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IDESTADO" id="118814DB-75FE-E457-993F-588FA8EAE5D7">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-05 01:55:10 UTC</createdTime>
+<generatorID>15852DFC-B788-5D09-3635-93F119B1A5FD</generatorID>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<referedAttribute>88709672-64CF-2AF1-DCFC-1E40B682505C</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="D7FFFB0C-9796-9515-D4AC-1AA7B9A49F67" name="CITA PK">
+<createdBy>mjara</createdBy>
+<createdTime>2020-01-04 18:13:48 UTC</createdTime>
+<ownerDesignName>Modelo</ownerDesignName>
+<engineerTo>
+<item key="753328DC-25C9-8A83-444C-82BC8171F74C" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4063D2E9-7C7D-B0F9-5B80-1FECE508C3B8</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
