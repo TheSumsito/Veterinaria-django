@@ -1,0 +1,67 @@
+{% extends 'complements/principal.htm' %}
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        <div class="regUsuario">
+            <div class="titulo">
+                <h1>Registro de Usuario</h1>
+            </div>
+            <div class="rutpersona">
+                <p>Ingrese su Rut</p>
+                <input type="text" name="txtRut" id="txtRut">
+            </div>
+            <div class="nombre">
+                <p>Ingrese su Nombre</p>
+                <input type="text" name="txtNombre" id="txtNombre">
+            </div>
+            <div class="apellido">
+                <p>Ingrese su Apellido</p>
+                <input type="text" name="txtApellido" id="txtApellido">
+            </div>
+            <div class="correo">
+                <p>Ingrese su Correo</p>
+                <input type="text" name="txtCorreo" id="txtCorreo">
+            </div>
+            <div class="telefono">
+                <p>Ingrese su Telefono</p>
+                <input type="text" name="txtTelefono" id="txtTelefono">
+            </div>
+            <div class="direccion">
+                <p>Ingrese su Dirección</p>
+                <input type="text" name="txtDireccion" id="txtDireccion">
+            </div>
+            <div class="provincia">
+                <p>Seleccione su Provincia</p>
+                <select name="cboProvincia" id="cboProvincia">
+                    <option>Seleccione</option>
+                    {% for pro in provincia %}
+                        <option value="{{pro.IdProvincia}}">{{pro.Descripcion}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="comuna">
+                <p>Seleccione su Comuna</p>
+                <select name="cboComuna" id="cboComuna">
+                    <option>Seleccione</option>
+                    {% for com in comuna %}
+                        <option value="{{com.IdComuna}}">{{com.Descripcion}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+            <div class="contrasena">
+                <p>Ingrese su Contraseña</p>
+                <input type="password" name="txtContrasena" id="txtContrasena">
+            </div>
+
+            <div class="boton">
+                <input type="submit" name="btnAccion" value="Registrar">
+                <a href="{% url 'login' %}">Volver</a>
+            </div>
+        </div>
+    </form>
+
+{% endblock body %}

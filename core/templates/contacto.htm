@@ -1,0 +1,83 @@
+<!-- ARCHIVOS PRINCIPALES -->
+{% extends 'complements/principal.htm' %}
+
+<!-- CABEZERA -->
+{% block head %}
+{% endblock head %}
+
+<!-- CUERPO -->
+{% block body %}
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="container-contacto">
+        <div class="titulo">
+            <h1>Contacto</h1>
+        </div>
+        <div class="texto">
+            <p>Si quieres conocer mas informacion acerca de nuestros productos y servicios no dude en comunicarse
+                con
+                nosotros</p>
+        </div>
+        <div class="formulario">
+            <div class="nombre">
+                <p>Nombre</p>
+                <input type="text" name="txtNombre" id="txtNombre">
+            </div>
+            <div class="apellido">
+                <p>Apellido</p>
+                <input type="text" name="txtApellido" id="txtApellido">
+            </div>
+            <div class="mail">
+                <p>Correo</p>
+                <input type="text" name="txtCorreo" id="txtCorreo">
+            </div>
+            <div class="telefono">
+                <p>Telefono</p>
+                <input type="text" name="txtTelefono" id="txtTelefono">
+            </div>
+            <div class="asunto">
+                <p>Asunto</p>
+                <input type="text" name="txtAsunto" id="txtAsunto">
+            </div>
+            <div class="mensaje">
+                <p>Mensaje</p>
+                <textarea name="txtMensaje" id="txtMensaje" cols="30" rows="5"></textarea>
+            </div>
+            <div class="boton">
+                {% if resp == False %}
+                <button>Enviar</button>
+                {% elif resp == True%}
+                <h1>Enviado</h1>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="detalle-contacto">
+    <div class="texto">
+        <p>Si quieres conocer nuestros servicios de manera detallada puedes contactarnos de manera Inmediata</p>
+    </div>
+    <div class="contacto">
+        <p><span>Teléfono: </span>+562 227933496 / +569 95344576</p>
+        <p><span>Mail: </span>contacto@bluevet.cl</p>
+        <p><span>Dirección: </span>Avenida La Florida 7683, La Florida, Santiago, CHILE</p>
+    </div>
+</div>
+
+<div class="container-social">
+    <div class="titulo">
+        <h1>Nuestras Redes Sociales</h1>
+    </div>
+    <div class="ico-facebook">
+        <img src="../static/img/ico-facebook.png" alt="">
+    </div>
+    <div class="ico-instagram">
+        <img src="../static/img/ico-instagram.jpg" alt="">
+    </div>
+    <div class="ico-twitter">
+        <img src="../static/img/ico-twitter.png" alt="">
+    </div>
+</div>
+
+{% endblock body %}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/css/fonts.css">
+    <link rel="stylesheet" href="../../static/css/efectos.css">
+
+    <link rel="stylesheet" href="../../static/css/style_1.css">
+
+    <script src="../../static/js/jquery-3.1.4.min.js"></script>
+
+    {% block head %}
+    {% endblock head %}
+
+</head>
+<body>
+    <div class="container-menu">
+        <div class="logo">
+            <img src="../static/img/logo_footer.png" alt="">
+        </div>
+
+        <div class="icono-menu">
+            <a id="icono"><span class="icon-menu"></span></a >
+        </div>
+
+        <nav class="menu" id="menu">
+            {% if user.is_authenticated == False %}
+            <ul>
+                <li><a href="{% url 'home' %}" class="active"><span class="icon-inicio"></span>Inicio</a></li>
+                <li><a href="{% url 'nosotros' %}"><span class="icon-nosotros"></span>Quienes Somos</a></li>
+                <li><a href="{% url 'servicios' %}"><span class="icon-servicios"></span>Servicios</a></li>
+                <li><a href="{% url 'planes' %}"><span class="icon-planes"></span>Nuestros Planes</a></li>
+                <li><a href="{% url 'contacto' %}"><span class="icon-contacto"></span>Contacto</a></li>
+                <li><a href="{% url 'login' %}"><span class="icon-login"></span>Login</a></li>
+            </ul>
+            {% endif %}
+
+            {% if user.is_authenticated == True and user.is_staff == False %}
+            <ul>
+                <li><a href="inicio.htm" class="active"><span class="icon-inicio"></span>{{per.Nombre}} {{per.Apellido}}</a></li>
+                <li><a href="ver-ficha.htm"><span class="icon-servicios"></span>Ficha Paciente</a></li>
+                <li><a href=""><span class="icon-planes"></span>Mis Citas</a>
+                    <ul class="submenu">
+                        <li><a href="ver-cita.htm">Ver Citas</a></li>
+                        <li><a href="agendar.htm">Agregar Cita</a></li>
+                        <li><a href="eliminar.htm">Eliminar Cita</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'cerrar' %}"><span class="icon-login"></span>Cerrar Sesion</a></li>
+            </ul>
+            {% endif %}
+
+            {% if user.is_authenticated == True and user.is_staff == True %}
+            <ul>
+                <li><a href="inicio.htm" class="active"><span class="icon-inicio"></span>{{per.Nombre}} {{per.Apellido}}</a></li>
+                <li><a href="ver-ficha.htm"><span class="icon-servicios"></span>Ficha Paciente</a></li>
+                <li><a href=""><span class="icon-planes"></span>Mis Citas</a>
+                    <ul class="submenu">
+                        <li><a href="ver-cita.htm">Ver Citas</a></li>
+                        <li><a href="agendar.htm">Agregar Cita</a></li>
+                        <li><a href="eliminar.htm">Eliminar Cita</a></li>
+                    </ul>
+                </li>
+                <li><a href="{% url 'cerrar' %}"><span class="icon-login"></span>Cerrar Sesion</a></li>
+            </ul>
+            {% endif %}
+
+        </nav>
+    </div>
+
+    {% block body %}
+    {% endblock body %}
+
+    <footer class="container-footer">
+        <div class="logo">
+            <img src="../static/img/logo_footer.png" alt="">
+        </div>
+        <div class="contacto">
+            <div class="titulo">
+                <h1>Contacto</h1>
+            </div>
+            <div class="texto">
+                <p>Direccion: Av.La Florida #7683, La Florida</p>
+                <p>Teléfono: +562 227933496 / +569 9534457</p>
+                <p>Mail: contacto@bluevet.cl</p>
+            </div>
+        </div>
+        <div class="horario">
+            <div class="titulo">
+                <h1>Horario</h1>
+            </div>
+            <div class="texto">
+                <p>Lunes - Viernes 10:00am-14:00pm / 16:00-21:00</p>
+                <p>Sábado 10:00am - 17:00pm</p>
+            </div>
+        </div>
+    </footer>   
+
+    <script src="../../static/js/code.js"></script>
+</body>
+</html>

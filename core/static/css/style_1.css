@@ -1,0 +1,167 @@
+
+@import 'https://fonts.googleapis.com/css?family=Roboto&display=swap';
+:root {
+    --blue: rgb(62, 118, 174);
+    --gray: #b6b6b6;
+    --lightgray: #F0F0F0;
+    --darkgray: rgb(105, 105, 105);
+    --black: #343434;
+    --white: rgb(182, 182, 182);
+}
+
+.regUsuario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 74px);
+    background-color: var(--lightgray)
+}
+
+.regUsuario .titulo {
+    grid-column: 3/6;
+    text-align: center;
+    font-family: 'roboto';
+    position: relative;
+    top: 10px;
+    color: var(--blue);
+}
+
+.regUsuario .nombre {
+    grid-column: 3/4;
+    grid-row: 2/2;
+    position: relative;
+    left: 60px;
+}
+
+
+.regUsuario .apellido {
+    grid-column: 5/6;
+    grid-row: 2/2;
+    position: relative;
+    right: 60px;
+}
+
+.regUsuario .rutpersona {
+    grid-column: 3/4;
+    grid-row: 3/3;
+    position: relative;
+    left: 60px;
+}
+
+.regUsuario .correo {
+    grid-column: 5/6;
+    grid-row: 3/3;
+    position: relative;
+    right: 60px;
+}
+
+.regUsuario .direccion {
+    grid-column: 3/4;
+    grid-row: 4/4;
+    position: relative;
+    left: 60px;
+}
+
+.regUsuario .telefono {
+    grid-column: 5/6;
+    grid-row: 4/4;
+    position: relative;
+    right: 60px;
+}
+
+.regUsuario .provincia {
+    grid-column: 3/4;
+    grid-row: 5/5;
+    position: relative;
+    left: 60px;
+}
+
+.regUsuario .comuna {
+    grid-column: 5/6;
+    grid-row: 5/5;
+    position: relative;
+    right: 60px;
+}
+
+.regUsuario .contrasena {
+    grid-column: 4/5;
+    grid-row: 6/6;
+    position: relative;
+    left: 0px;
+    top: 10px;
+}
+
+.regUsuario .boton {
+    grid-column: 3/6;
+    grid-row: 7/7;
+    text-align: center;
+    position: relative;
+    right: 0px;
+    top: 10px;
+}
+
+.regUsuario .boton input,
+.regUsuario .boton a {
+    padding: 5px 20px;
+    color: white;
+    background-color: var(--blue);
+    border: 1px solid var(--blue);
+    font-family: 'Roboto';
+    font-size: 17px;
+    text-decoration: none;
+}
+
+
+.regUsuario .nombre p,
+.regUsuario .apellido p,
+.regUsuario .rutpersona p,
+.regUsuario .correo p,
+.regUsuario .direccion p,
+.regUsuario .telefono p,
+.regUsuario .provincia p,
+.regUsuario .comuna p{
+    font-family: 'roboto';
+    color: var(--darkgray);
+}
+
+.regUsuario .contrasena p {
+    font-family: 'roboto';
+    color: var(--darkgray);
+    text-align: center;
+}
+
+.regUsuario .nombre input,
+.regUsuario .apellido input,
+.regUsuario .rutpersona input,
+.regUsuario .correo input,
+.regUsuario .direccion input,
+.regUsuario .telefono input,
+.regUsuario .provincia input,
+.regUsuario .comuna input {
+    font-family: 'roboto';
+    text-align: center;
+    height: 20px;
+    width: 90%;
+    position: relative;
+    top: 10px;
+    color: var(--darkgray)
+}
+
+.regUsuario .contrasena input {
+    font-family: 'roboto';
+    text-align: center;
+    height: 20px;
+    width: 90%;
+    position: relative;
+    top: 10px;
+    left: 7px;
+    color: var(--darkgray)
+}
+
+.regUsuario .provincia select,
+.regUsuario .comuna select {
+    height: 30px;
+    width: 90%;
+    font-family: 'roboto';
+    position: relative;
+    top: 10px;
+}

@@ -1,0 +1,32 @@
+<!-- ARCHIVOS PRINCIPALES -->
+{% extends 'complements/principal.htm' %}
+
+<!-- CABEZERA -->
+{% block head %}
+{% endblock head %}
+
+<!-- CUERPO -->
+{% block body %}
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
+        <div class="container-login">
+            <div class="titulo">
+                <h1>Iniciar Sesion</h1>
+            </div>
+            <div class="formulario">
+                <div class="usuario">
+                    <p>Rut Persona</p>
+                    <input type="text" name="txtRut" id="txtRut">
+                </div>
+                <div class="contrasena">
+                    <p>Contraseña</p>
+                    <input type="password" name="txtPass" id="txtPass">
+                </div>
+                <div class="boton">
+                    <input type="submit" name="btnAccion" value="Ingresar">
+                    <a href="{% url 'RegistroUsuario' %}">Registrarse</a>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock body %}
