@@ -110,3 +110,26 @@ class Cita(models.Model):
 
     def __str__(self):
         return self.Descripcion
+
+class FichaVacunacion(models.Model):
+    IdFicha = models.IntegerField()
+    Descripcion = models.CharField(max_length=50)
+    FechaVacuna = models.DateField()
+    FechaProxima = models.DateField()
+    IdMascota = models.ForeignKey(Mascota, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Descripcion
+
+class FichaDesparacitacion(models.Model):
+    IdFicha = models.IntegerField(primary_key=True)
+    FechaDesp = models.DateField()
+    Peso = models.IntegerField()
+    Medicamento = models.CharField(max_length=50)
+    Dosis = models.CharField(max_length=50)
+    FechaProxima = models.DateField()
+    IdMascota = models.ForeignKey(Mascota, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.Medicamento
+

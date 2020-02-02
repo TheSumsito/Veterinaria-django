@@ -165,3 +165,287 @@
     position: relative;
     top: 10px;
 }
+
+/* ----------------------------------------------- */
+.container-ver {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    background-color: var(--lightgray);
+}
+
+.container-ver .titulo {
+    grid-column: 1/-1;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+.container-ver .buscar {
+    grid-row: 2/2;
+    grid-column: 3/6;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+
+.container-ver .nombre-masc {
+    grid-column: 2/7;
+    grid-row: 5/6;
+    text-align: center;
+}
+
+.container-ver .nombre-masc h1 {
+    font-family: 'Roboto';
+    color: var(--blue);
+}
+
+.container-ver table {
+    grid-column: 2/7;
+    grid-row: 6/9;
+    position: relative;
+    top: 30px;
+}
+
+.container-ver table tr th,
+.container-ver table tr td {
+    font-family: 'Roboto';
+    border: 1px solid var(--darkgray);
+    text-align: center;
+    color: var(--darkgray);
+}
+
+.container-ver .titulo h1 {
+    font-family: 'Roboto';
+    color: var(--blue);
+}
+
+.container-ver .buscar p {
+    font-family: 'Roboto';
+}
+
+.container-ver .buscar select {
+    font-family: 'Roboto';
+    position: relative;
+    top: 15px;
+    padding: 3px 15px;
+}
+
+.container-ver .buscar input {
+    font-family: 'Roboto';
+    position: relative;
+    top: 14px;
+    left: 10px;
+    padding: 4px 15px;
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+}
+
+
+/* ----------------------------------------------- */
+.container-anular {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+    background-color: var(--lightgray);
+}
+
+.container-anular .titulo {
+    grid-column: 1/-1;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+.container-anular .buscar {
+    grid-row: 2/2;
+    grid-column: 3/6;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+.container-anular .nombre-masc {
+    grid-column: 2/7;
+    grid-row: 5/6;
+    text-align: center;
+}
+
+.container-anular .nombre-masc h1 {
+    font-family: 'Roboto';
+    color: var(--blue);
+}
+
+.container-anular table {
+    grid-column: 2/7;
+    grid-row: 7/10;
+}
+
+.container-anular table tr th,
+.container-anular table tr td {
+    font-family: 'Roboto';
+    border: 1px solid var(--darkgray);
+    text-align: center;
+    color: var(--darkgray);
+}
+
+.container-anular .titulo h1 {
+    font-family: 'Roboto';
+    color: var(--blue);
+}
+
+.container-anular .buscar p {
+    font-family: 'Roboto';
+}
+
+.container-anular .buscar select {
+    font-family: 'Roboto';
+    position: relative;
+    top: 15px;
+    padding: 3px 15px;
+}
+
+.container-anular .buscar input {
+    font-family: 'Roboto';
+    position: relative;
+    top: 14px;
+    left: 10px;
+    padding: 4px 15px;
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+}
+
+
+.container-anular .anular {
+    grid-column: 3/6;
+    grid-row: 12/15;
+    text-align: center;
+}
+
+.container-anular .anular p {
+    font-family: 'Roboto';
+}
+
+.container-anular .anular input {
+    position: relative;
+    top: 10px;
+    text-align: center;
+}
+
+
+.container-anular .anular .boton input {
+    font-family: 'Roboto';
+    position: relative;
+    top: 20px;
+    padding: 4px 15px;
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+}
+
+/* --------------------------------------------------- */
+.container-ficha {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(20, 1fr);
+    background-color: var(--lightgray);
+}
+
+.container-ficha .titulo {
+    grid-column: 1/-1;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+.container-ficha .buscar {
+    grid-row: 2/2;
+    grid-column: 3/6;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+.container-ficha .titulo h1 {
+    font-family: 'Roboto';
+    color: var(--blue);
+}
+
+.container-ficha .buscar p {
+    font-family: 'Roboto';
+}
+
+.container-ficha .buscar select {
+    font-family: 'Roboto';
+    position: relative;
+    top: 15px;
+    padding: 3px 15px;
+}
+
+.container-ficha .buscar input {
+    font-family: 'Roboto';
+    position: relative;
+    top: 14px;
+    left: 10px;
+    padding: 4px 15px;
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+}
+
+.container-ficha .nombre-masc {
+    grid-column: 2/7;
+    grid-row: 5/6;
+    text-align: center;
+}
+
+.container-ficha .nombre-masc h1 {
+    font-family: 'Roboto';
+    color: var(--blue);
+}
+
+.container-ficha .mascota {
+    grid-column: 2/7;
+    grid-row: 7/10;
+}
+
+.container-ficha .mascota tr th,
+.container-ficha .mascota tr td {
+    font-family: 'Roboto';
+    border: 1px solid var(--darkgray);
+    text-align: center;
+    color: var(--darkgray);
+}
+
+
+.container-ficha .vacuna {
+    grid-column: 2/7;
+    grid-row: 11/14;
+}
+
+.container-ficha .vacuna tr th,
+.container-ficha .vacuna tr td {
+    font-family: 'Roboto';
+    border: 1px solid var(--darkgray);
+    text-align: center;
+    color: var(--darkgray);
+}
+
+.container-ficha .desparacitacion {
+    grid-column: 2/7;
+    grid-row: 15/18;
+}
+
+.container-ficha .desparacitacion tr th,
+.container-ficha .desparacitacion tr td {
+    font-family: 'Roboto';
+    border: 1px solid var(--darkgray);
+    text-align: center;
+    color: var(--darkgray);
+}
+
+
+

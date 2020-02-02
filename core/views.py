@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Contacto, Provincia, Comuna, Persona, Usuario, Mascota, Raza, TipoConsulta, Cita
+from .models import *
 
 #! IMPORTACION PARA TRABAJAR CON USUARIO
 from django.contrib import auth
@@ -10,6 +10,9 @@ from django.contrib.auth import logout, login, authenticate
 
 #! FUNCION PARA REDIRECCIONAR LOGOUT
 from django.http import HttpResponse,HttpResponseRedirect
+
+#! NUMERO RANDOM
+from random import randint
 
 # Create your views here.
 
@@ -97,6 +100,7 @@ def cerrar(request):
 def RegistroUsuario(request):
     pro = Provincia.objects.all()
     com = Comuna.objects.all()
+
     if request.POST:
         nombre = request.POST.get("txtNombre", "")
         apellido = request.POST.get("txtApellido", "")
@@ -104,6 +108,7 @@ def RegistroUsuario(request):
         direccion = request.POST.get("txtDireccion", "")
         telefono = request.POST.get("txtTelefono", "")
         comuna = request.POST.get("cboComuna", "")
+        provincia = request.POST.get("cboProvincia", "")
 
         #! USUARIO - CONTRASEÑA
         rutpersona = request.POST.get("txtRut", "")
@@ -111,7 +116,8 @@ def RegistroUsuario(request):
 
         #! INSTANCES
         comu_id = Comuna.objects.get(IdComuna=comuna)
-
+        provi_id = Provincia.objects.get(IdProvincia=provincia)
+        
         per = Persona(
             RutPersona=rutpersona,
             Nombre=nombre,
@@ -142,11 +148,13 @@ def AgendarCita(request):
     rutpersona = request.user.username
     persona = Persona.objects.get(RutPersona=rutpersona)
     mascotas = Mascota.objects.filter(RutPersona=rutpersona)
+    random = randint(0, 99999)
+
     tipo = TipoConsulta.objects.all()
 
     if request.POST:
         nombreMascota = request.POST.get("cboMascota", "")
-        tipoConsulta = request.POST.get("cboConsulta", "")
+        tipoConsulta = request.POST.get("cboTipo", "")
         fecha = request.POST.get("txtFecha", "")
         hora = request.POST.get("txtHora", "")
 
@@ -155,14 +163,73 @@ def AgendarCita(request):
         mascota_id = Mascota.objects.get(IdMascota=nombreMascota)
 
         cita = Cita(
-            IdCita=234234,
+            IdCita=random,
             Descripcion = "N/A",
             Fecha = fecha,
             Hora = hora,
-            IdMascota=nombreMascota,
+            IdMascota=mascota_id,
             IdTipo=tipo_id,     
             Estado=False
         )
         cita.save()
-        return render(request, '../templates/usuario/agendar-cita.htm', {'name':nombreMascota, 'tipoConsulta': tipo_id, 'fecha': fecha, 'hora': hora})
+        return render(request, '../templates/usuario/agendar-cita.htm', {'per':persona ,'name':nombreMascota, 'tipoConsulta': tipo_id, 'fecha': fecha, 'hora': hora})
+    else:
+        return render(request, '../templates/usuario/agendar-cita.htm', {'per':persona, 'mascotas': mascotas, 'tipo': tipo})
     return render(request, '../templates/usuario/agendar-cita.htm', {'per':persona, 'mascotas': mascotas, 'tipo': tipo})
+
+def VerCitas(request):
+    user = auth.authenticate()
+    rutpersona = request.user.username
+    persona = Persona.objects.get(RutPersona=rutpersona)
+    mascotas = Mascota.objects.filter(RutPersona=rutpersona)
+    
+    if request.POST:
+        accion = request.POST.get("btnAccion", "")
+        if accion == "Buscar":
+            nombre_id = request.POST.get("cboNombre", "")
+            citas = Cita.objects.filter(IdMascota=nombre_id)
+            name = Mascota.objects.get(IdMascota=nombre_id)
+            return render(request, '../templates/usuario/ver-citas.htm', {'per': persona, 'mascota': mascotas, 'citas': citas, 'name':name})
+        else:
+            return render(request, '../templates/usuario/ver-citas.htm')
+    return render(request, '../templates/usuario/ver-citas.htm', {'per': persona, 'mascota': mascotas})
+
+def AnularCita(request):
+    user = auth.authenticate()
+    rutpersona = request.user.username
+    persona = Persona.objects.get(RutPersona=rutpersona)
+    mascotas = Mascota.objects.filter(RutPersona=rutpersona)
+
+    if request.POST:
+        accion = request.POST.get("btnAccion", "")
+        if accion == "Buscar":
+            nombre_id = request.POST.get("cboNombre", "")
+            citas = Cita.objects.filter(IdMascota=nombre_id)
+            name = Mascota.objects.get(IdMascota=nombre_id)
+            return render(request, '../templates/usuario/anular-cita.htm', {'per': persona, 'mascotas':mascotas, 'citas': citas, 'name':name})
+        elif accion == "Anular":
+            identificador = request.POST.get("txtIdentificador")
+            cita_id = Cita.objects.filter(IdCita=identificador)
+            cita_id.delete()
+            return render(request, '../Templates/usuario/anular-cita.htm', {'per':persona, 'mascotas':mascotas, 'citas':cita_id})
+        
+        else:
+            return render(request, '../templates/usuario/anular-cita.htm', {'per':persona, 'mascotas':mascotas, 'citas':cita})
+    return render(request, '../templates/usuario/anular-cita.htm', {'per': persona, 'mascotas':mascotas})
+
+
+def FichaPaciente(request):
+    user = auth.authenticate()
+    rutpersona = request.user.username
+    persona = Persona.objects.get(RutPersona=rutpersona)
+    mascotas = Mascota.objects.filter(RutPersona=rutpersona)
+    if request.POST:
+        accion = request.POST.get("btnAccion", "")
+        if accion == "Buscar":
+            nombre_id = request.POST.get("cboNombre", "")
+            desparacitacion = FichaDesparacitacion.objects.filter(IdMascota=nombre_id)
+            vacunas = FichaVacunacion.objects.filter(IdMascota=nombre_id)
+            name = Mascota.objects.get(IdMascota=nombre_id)
+            mascota = Mascota.objects.filter(IdMascota=nombre_id)
+            return render(request, '../templates/usuario/ficha-paciente.htm', {'per': persona, 'mascotas': mascotas, 'masc':mascota , 'vacunas': vacunas , 'desparacitacion': desparacitacion, 'name':name})
+    return render(request, '../templates/usuario/ficha-paciente.htm', {'per': persona, 'mascotas': mascotas})

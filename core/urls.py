@@ -18,4 +18,7 @@ urlpatterns = [
 
     #! VISTAS USUARIO
     path('agendar-cita/', AgendarCita, name="AgendarCita"),
+    path('ver-citas/', VerCitas, name="VerCitas"),
+    path('anular-cita', AnularCita, name="AnularCita"),
+    path('ficha-paciente/', FichaPaciente, name="FichaPaciente")
 ]

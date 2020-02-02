@@ -1,0 +1,50 @@
+{% extends 'complements/principal.htm' %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="container-ver">
+        <div class="titulo">
+            <h1>Citas Agendadas</h1>
+        </div>
+        <div class="buscar">
+            <p>¿De quien deseas buscar sus citas?</p>
+            <select name="cboNombre" id="cboNombre">
+                <option value="">Seleccionar</option>
+                {% for mas in mascota %}
+                <option value="{{mas.IdMascota}}">{{mas.Nombre}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" name="btnAccion" value="Buscar">
+        </div>
+        <div class="nombre-masc">
+            <h1>{{name}}</h1>
+        </div>
+        <table>
+            <tr>
+                <th>Tipo de Consulta</th>
+                <th>Descripcion</th>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Estado</th>
+            </tr>
+            {% for c in citas %}
+            <tr>
+                <td>{{c.IdTipo}}</td>
+                <td>{{c.Descripcion}}</td>
+                <td>{{c.Fecha}}</td>
+                <td>{{c.Hora}}</td>
+                {% if c.Estado == True %}
+                    <td>Aprobado</td>
+                {% else %}
+                    <td>No Aprobado</td>
+                {% endif %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</form>
+{% endblock body%}

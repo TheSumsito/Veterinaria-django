@@ -1,0 +1,83 @@
+{% extends 'complements/principal.htm' %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="container-ficha">
+        <div class="titulo">
+            <h1>Ficha Paciente</h1>
+        </div>
+        <div class="buscar">
+            <p>¿De quien desea encontrar su Ficha tecnica?</p>
+            <select name="cboNombre" id="cboNombre">
+                <option value="">Seleccionar</option>
+                {% for mas in mascotas %}
+                    <option value="{{mas.IdMascota}}">{{mas.Nombre}}</option>
+                {% endfor %}
+            </select>
+            <input type="submit" name="btnAccion" value="Buscar">
+        </div>
+        <div class="nombre-masc">
+            <h1>{{name}}</h1>
+        </div>
+        <table class="mascota">
+            <tr>
+                <th>Identificador</th>
+                <th>Color</th>
+                <th>Tamaño</th>
+                <th>Peso</th>
+                <th>Raza</th>
+                <th>Genero</th>
+            </tr>
+            {% for mas in masc %}
+            <tr>
+                <td>{{mas.IdMascota}}</td>
+                <td>{{mas.Color}}</td>
+                <td>{{mas.IdTamano}}</td>
+                <td>{{mas.Peso}}</td>
+                <td>{{mas.IdRaza}}</td>
+                <td>{{mas.IdGenero}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <table class="vacuna">
+            <tr>
+                <th>Identificador</th>
+                <th>Descripcion</th>
+                <th>Fecha Vacuna</th>
+                <th>Fecha Proxima</th>
+            </tr>
+            {% for vac in vacunas %}
+            <tr>
+                <td>{{vac.IdFicha}}</td>
+                <td>{{vac.Descripcion}}</td>
+                <td>{{vac.FechaVacuna}}</td>
+                <td>{{vac.FechaProxima}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <table class="desparacitacion">
+            <tr>
+                <th>Identificador</th>
+                <th>Medicamentos</th>
+                <th>Dosis</th>
+                <th>Peso</th>
+                <th>Fecha Desparacitacion</th>
+            </tr>
+            {% for desp in desparacitacion %}
+            <tr>
+                <td>{{desp.IdFicha}}</td>
+                <td>{{desp.Medicamento}}</td>
+                <td>{{desp.Dosis}}</td>
+                <td>{{desp.Peso}}</td>
+                <td>{{desp.FechaProxima}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</form>
+{% endblock body%}

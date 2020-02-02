@@ -4915,29 +4915,35 @@
     color: var(--blue);
 }
 
-.container-inicio {
+.container-inicio-titulo {
     display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(12, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     background-color: var(--lightgray);
 }
 
-.container-inicio .titulo {
-    grid-column: 3/6;
+.container-inicio-titulo .titulo {
     text-align: center;
-    position: relative;
-    top: 50%;
+    background-color: var(--lightgray);
 }
 
-.container-inicio .titulo h1 {
+.container-inicio-titulo .titulo h1 {
     font-family: 'roboto';
     color: var(--blue);
+    position: relative;
+    top: 35px;
+}
+
+.container-inicio {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: var(--lightgray);
 }
 
 
-.container-inicio .detalle-mascota-1 {
+.container-inicio .detalle-mascota {
     grid-column: 3/6;
-    grid-row: 3/7;
+    grid-row: 1/6;
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(5, 50px);
@@ -4945,7 +4951,7 @@
     border-radius: 50px;
 }
 
-.container-inicio .detalle-mascota-1 .nombre {
+.container-inicio .detalle-mascota .nombre {
     grid-column: 3/6;
     grid-row: 1/1;
     position: relative;
@@ -4953,12 +4959,12 @@
     text-align: center;
 }
 
-.container-inicio .detalle-mascota-1 .nombre h1 {
+.container-inicio .detalle-mascota .nombre h1 {
     font-family: 'roboto';
     color: var(--darkgray);
 }
 
-.container-inicio .detalle-mascota-1 .raza {
+.container-inicio .detalle-mascota .raza {
     grid-column: 2/4;
     grid-row: 2/2;
     position: relative;
@@ -4966,7 +4972,7 @@
     text-align: center;
 }
 
-.container-inicio .detalle-mascota-1 .color {
+.container-inicio .detalle-mascota .color {
     grid-column: 5/7;
     grid-row: 2/2;
     position: relative;
@@ -4974,7 +4980,7 @@
     text-align: center;
 }
 
-.container-inicio .detalle-mascota-1 .peso {
+.container-inicio .detalle-mascota .peso {
     grid-column: 2/4;
     grid-row: 4/4;
     position: relative;
@@ -4982,7 +4988,7 @@
     text-align: center;
 }
 
-.container-inicio .detalle-mascota-1 .tamano {
+.container-inicio .detalle-mascota .tamano {
     grid-column: 5/7;
     grid-row: 4/4;
     position: relative;
@@ -4990,90 +4996,18 @@
     text-align: center;
 }
 
-.container-inicio .detalle-mascota-1 .raza p,
-.container-inicio .detalle-mascota-1 .color p,
-.container-inicio .detalle-mascota-1 .peso p,
-.container-inicio .detalle-mascota-1 .tamano p {
+.container-inicio .detalle-mascota .raza p,
+.container-inicio .detalle-mascota .color p,
+.container-inicio .detalle-mascota .peso p,
+.container-inicio .detalle-mascota .tamano p {
     font-family: 'roboto';
     color: var(--darkgray);
 }
 
-.container-inicio .detalle-mascota-1 .raza input,
-.container-inicio .detalle-mascota-1 .color input,
-.container-inicio .detalle-mascota-1 .peso input,
-.container-inicio .detalle-mascota-1 .tamano input {
-    font-family: 'roboto';
-    color: var(--darkgray);
-    text-align: center;
-}
-
-.container-inicio .detalle-mascota-2 {
-    grid-column: 3/6;
-    grid-row: 8/12;
-    display: grid;
-    grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(5, 50px);
-    border: 1px solid var(--blue);
-    border-radius: 50px;
-}
-
-.container-inicio .detalle-mascota-2 .nombre {
-    grid-column: 3/6;
-    grid-row: 1/1;
-    position: relative;
-    top: 30%;
-    text-align: center;
-}
-
-.container-inicio .detalle-mascota-2 .nombre h1 {
-    font-family: 'roboto';
-    color: var(--darkgray);
-}
-
-.container-inicio .detalle-mascota-2 .raza {
-    grid-column: 2/4;
-    grid-row: 2/2;
-    position: relative;
-    top: 30%;
-    text-align: center;
-}
-
-.container-inicio .detalle-mascota-2 .color {
-    grid-column: 5/7;
-    grid-row: 2/2;
-    position: relative;
-    top: 30%;
-    text-align: center;
-}
-
-.container-inicio .detalle-mascota-2 .peso {
-    grid-column: 2/4;
-    grid-row: 4/4;
-    position: relative;
-    top: 30%;
-    text-align: center;
-}
-
-.container-inicio .detalle-mascota-2 .tamano {
-    grid-column: 5/7;
-    grid-row: 4/4;
-    position: relative;
-    top: 30%;
-    text-align: center;
-}
-
-.container-inicio .detalle-mascota-2 .raza p,
-.container-inicio .detalle-mascota-2 .color p,
-.container-inicio .detalle-mascota-2 .peso p,
-.container-inicio .detalle-mascota-2 .tamano p {
-    font-family: 'roboto';
-    color: var(--darkgray);
-}
-
-.container-inicio .detalle-mascota-2 .raza input,
-.container-inicio .detalle-mascota-2 .color input,
-.container-inicio .detalle-mascota-2 .peso input,
-.container-inicio .detalle-mascota-2 .tamano input {
+.container-inicio .detalle-mascota .raza input,
+.container-inicio .detalle-mascota .color input,
+.container-inicio .detalle-mascota .peso input,
+.container-inicio .detalle-mascota .tamano input {
     font-family: 'roboto';
     color: var(--darkgray);
     text-align: center;

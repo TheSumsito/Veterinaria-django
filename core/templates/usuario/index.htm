@@ -10,13 +10,15 @@
     </div>
 </div>
 
-<div class="container-inicio">
+<div class="container-inicio-titulo">
     <div class="titulo">
         <h1>Mis Mascotas</h1>
     </div>
+</div>
 
-    {% for mas in mascotas %}
-    <div class="detalle-mascota-1">
+{% for mas in mascotas %}
+<div class="container-inicio">
+    <div class="detalle-mascota">
         <div class="nombre">
             <h1>{{mas.Nombre}}</h1>
         </div>
@@ -37,6 +39,6 @@
             <input type="text" name="txtTamano" id="txtTamano" value="{{mas.IdTamano}}" readonly>
         </div>
     </div>
-    {% endfor %}
 </div>
+{% endfor %}
 {% endblock body %}
