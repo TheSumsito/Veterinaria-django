@@ -57,7 +57,7 @@
             {% if user.is_authenticated == True and user.is_staff == True %}
             <ul>
                 <li><a href="{% url 'homeAdmin' %}" class="active"><span class="icon-inicio"></span>{{username}}</a></li>
-                <li><a href="{% url 'regMascota' %}"><span class="icon-servicios"></span>Registro Mascota</a></li>
+                <li><a href="{% url 'AdminMascota' %}"><span class="icon-servicios"></span>Administrar Mascotas</a></li>
                 <li><a href=""><span class="icon-planes"></span>Detalles Citas</a>
                     <ul class="submenu">
                         <li><a href="{% url 'AprobarCita' %}">Aprobar Citas</a></li>

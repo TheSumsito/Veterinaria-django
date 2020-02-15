@@ -1,0 +1,58 @@
+{% extends 'complements/principal.htm' %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<form method="POST">
+    <div class="identificador">
+        <p>Identificador:</p>
+        <input type="text" name="txtIdentificador" id="txtIdentificador" value="{{random}}" readonly>
+    </div>
+    
+    <div class="nombre">
+        <p>Nombre:</p>
+        <input type="text" name="txtNombre" id="txtNombre">
+    </div>
+    
+    <div class="rutpersona">
+        <p>Rut Persona:</p>
+        <input type="text" name="txtRutPersona" id="txtRutPersona" value="{{rutpersona}}" readonly>
+    </div>
+    <div class="color">
+        <p>Color:</p>
+        <input type="text" name="txtColor" id="txtColor">
+    </div>
+    <div class="tamano">
+        <p>Tamaño:</p>
+        <select name="cboTamano" id="cboTamano">
+            <option>Seleccionar</option>
+            {% for tam in tamano %}
+                <option value="{{tam.IdTamano}}">{{tam.Descripcion}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="peso">
+        <p>Peso:</p>
+        <input type="text" name="txtPeso" id="txtPeso">
+    </div>
+    <div class="raza">
+        <p>Raza:</p>
+        <select name="cboRaza" id="cboRaza">
+            <option>Seleccionar</option>
+            {% for ra in raza %}
+                <option value="{{ra.IdRaza}}">{{ra.Descripcion}}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <div class="genero">
+        <p>Genero:</p>
+        <select name="cboGenero" id="cboGenero">
+            <option>Seleccionar</option>
+            {% for gen in genero %}
+                <option value="{{gen.IdGenero}}">{{gen.Descripcion}}</option>
+            {% endfor %}
+        </select>
+    </div>
+</form>
+{% endblock body %}

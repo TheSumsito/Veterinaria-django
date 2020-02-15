@@ -1,0 +1,126 @@
+.container-reg-mascota .identificador {
+    grid-column: 3/4;
+    grid-row: 7/7;
+    text-align: center;
+}
+
+.container-reg-mascota .rutpersona {
+    grid-column: 5/6;
+    grid-row: 7/7;
+    text-align: center;
+}
+
+.container-reg-mascota .nombre {
+    grid-column: 3/4;
+    grid-row: 9/9;
+    text-align: center;
+}
+
+.container-reg-mascota .color {
+    grid-column: 5/6;
+    grid-row: 9/9;
+    text-align: center;
+}
+
+.container-reg-mascota .tamano {
+    grid-column: 3/4;
+    grid-row: 11/11;
+    text-align: center;
+}
+
+.container-reg-mascota .peso {
+    grid-column: 5/6;
+    grid-row: 11/11;
+    text-align: center;
+}
+
+.container-reg-mascota .raza {
+    grid-column: 3/4;
+    grid-row: 13/13;
+    text-align: center;
+}
+
+.container-reg-mascota .genero {
+    grid-column: 5/6;
+    grid-row: 13/13;
+    text-align: center;
+}
+
+.container-reg-mascota .boton {
+    grid-row: 15/15;
+    grid-column: 4/5;
+    text-align: center;
+}
+
+.container-reg-mascota .titulo h1 {
+    font-family: 'Roboto';
+    color: var(--blue);
+}
+
+.container-reg-mascota .buscar-persona h3 {
+    font-family: 'Roboto';
+    color: var(--darkgray);
+}
+
+
+.container-reg-mascota .identificador, p,
+.container-reg-mascota .nombre p,
+.container-reg-mascota .rutpersona p,
+.container-reg-mascota .color p,
+.container-reg-mascota .tamano p,
+.container-reg-mascota .peso p,
+.container-reg-mascota .raza p,
+.container-reg-mascota .genero p {
+    font-family: 'Roboto';
+    color: var(--black);
+}
+
+
+.container-reg-mascota .identificador input,
+.container-reg-mascota .rutpersona input,
+.container-reg-mascota .nombre input,
+.container-reg-mascota .color input,
+.container-reg-mascota .peso input {
+    font-family: 'Roboto';
+    text-align: center;
+    padding: 3px 32px;
+}
+
+.container-reg-mascota .tamano select,
+.container-reg-mascota .genero select {
+    font-family: 'Roboto';
+    padding: 3px 60px;
+    text-align: center;
+}
+
+.container-reg-mascota .raza select  {
+    padding: 5px;
+    text-align: center;
+}
+
+.container-reg-mascota .detalle-mascota {
+    text-align: center;
+}
+
+.container-reg-mascota .detalle-mascota tr th,
+.container-reg-mascota .detalle-mascota tr td {
+    font-family: 'Roboto';
+    border: .3px solid var(--black);
+    color: var(--darkgray);
+}
+
+.container-reg-mascota .buscar-persona .buscar span input {
+    font-family: 'Roboto';
+    color: white;
+    background-color: var(--blue);
+    border: .3px solid var(--blue);
+    padding: 2px 5px;
+} 
+
+.container-reg-mascota .boton input {
+    padding: 7px 15px;
+    font-family: 'Roboto';
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+}

@@ -1,0 +1,50 @@
+s{% extends 'complements/principal.htm' %}
+
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="container-reg-mascota">
+        <div class="titulo">
+            <h1>Administrar Mascotas</h1>
+        </div>
+
+        <div class="buscar">
+            <p>Ingrese Rut Persona</p>
+            <input type="text" name="txtRut" id="txtRut">
+            <span><input type="submit" name="btnAccion" value="Buscar"></span>
+        </div>
+
+        <table class="detalle-mascota">
+            <tr>
+                <th>Identificador</th>
+                <th>Nombre</th>
+                <th>Color</th>
+                <th>Tamaño</th>
+                <th>Peso</th>
+                <th>Raza</th>
+                <th>Genero</th>
+            </tr>
+            {% for mas in mascotas %}
+            <tr>
+                <td>{{mas.IdMascota}}</td>
+                <td>{{mas.Nombre}}</td>
+                <td>{{mas.Color}}</td>
+                <td>{{mas.IdTamano}}</td>
+                <td>{{mas.Peso}} KG</td>
+                <td>{{mas.IdRaza}}</td>
+                <td>{{mas.IdGenero}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <div class="boton">
+            <input type="submit" name="btnAccion" value="Registrar Mascota">
+            <input type="submit" name="btnAccion" value="Modificar Mascota">
+            <input type="submit" name="btnAccion" value="Eliminar Mascota">
+        </div>
+    </div>
+</form>
+
+{% endblock body %}
