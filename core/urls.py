@@ -20,5 +20,9 @@ urlpatterns = [
     path('agendar-cita/', AgendarCita, name="AgendarCita"),
     path('ver-citas/', VerCitas, name="VerCitas"),
     path('anular-cita', AnularCita, name="AnularCita"),
-    path('ficha-paciente/', FichaPaciente, name="FichaPaciente")
+    path('ficha-paciente/', FichaPaciente, name="FichaPaciente"),
+
+    #! VISTAS ADMINISTRADOR
+    path('reg-mascota/', regMascota, name="regMascota"),
+    path('aprobar-cita/', AprobarCita, name="AprobarCita"),
 ]

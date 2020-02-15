@@ -5048,21 +5048,11 @@
 
 
 .container-agendar .fecha {
-    grid-column: 3/4;
+    grid-column: 4/5;
     grid-row: 5/5;
     text-align: center;
     position: relative;
-    left: 30%;
-    top: 30%;
-}
-
-.container-agendar .hora {
-    grid-column: 5/6;
-    grid-row: 5/5;
-    text-align: center;
-    position: relative;
-    right: 30%;
-    top: 30%;
+    top: 30px;
 }
 
 .container-agendar .boton {
@@ -5078,8 +5068,7 @@
 
 .container-agendar .mascota p,
 .container-agendar .tipo p, 
-.container-agendar .fecha p,
-.container-agendar .hora p {
+.container-agendar .fecha p {
     font-family: 'roboto';
     color: var(--darkgray);
     font-size: 2.5vh;
@@ -5097,8 +5086,7 @@
 }
 
 
-.container-agendar .fecha input,
-.container-agendar .hora input {
+.container-agendar .fecha input {
     font-family: 'roboto';
     color: var(--darkgray);
     width: 80%;

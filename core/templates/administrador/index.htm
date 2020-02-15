@@ -4,5 +4,31 @@
 
 {% block body %}
 {% csrf_token %}
-    <h1>Administrador</h1>
+<div class="container-info-contacto">
+    <div class="titulo">
+        <h1>Contactos Recibidos</h1>
+    </div>
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Correo</th>
+            <th>Telefono</th>
+            <th>Asunto</th>
+            <th>Mensaje</th>
+        </tr>
+        {% for con in contactos %}
+        <tr>
+            <td>{{con.Nombre}}</td>
+            <td>{{con.Apellido}}</td>
+            <td>{{con.Correo}}</td>
+            <td>{{con.Telefono}}</td>
+            <td>{{con.Asunto}}</td>
+            <td>{{con.Mensaje}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+
+
 {% endblock body %}

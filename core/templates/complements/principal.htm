@@ -56,13 +56,12 @@
 
             {% if user.is_authenticated == True and user.is_staff == True %}
             <ul>
-                <li><a href="inicio.htm" class="active"><span class="icon-inicio"></span>{{per.Nombre}} {{per.Apellido}}</a></li>
-                <li><a href="ver-ficha.htm"><span class="icon-servicios"></span>Ficha Paciente</a></li>
-                <li><a href=""><span class="icon-planes"></span>Mis Citas</a>
+                <li><a href="{% url 'homeAdmin' %}" class="active"><span class="icon-inicio"></span>{{username}}</a></li>
+                <li><a href="{% url 'regMascota' %}"><span class="icon-servicios"></span>Registro Mascota</a></li>
+                <li><a href=""><span class="icon-planes"></span>Detalles Citas</a>
                     <ul class="submenu">
-                        <li><a href="ver-cita.htm">Ver Citas</a></li>
-                        <li><a href="agendar.htm">Agregar Cita</a></li>
-                        <li><a href="eliminar.htm">Eliminar Cita</a></li>
+                        <li><a href="{% url 'AprobarCita' %}">Aprobar Citas</a></li>
+                        <li><a href="agendar.htm">Registro Cita</a></li>
                     </ul>
                 </li>
                 <li><a href="{% url 'cerrar' %}"><span class="icon-login"></span>Cerrar Sesion</a></li>

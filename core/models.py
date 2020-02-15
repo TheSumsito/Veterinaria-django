@@ -12,14 +12,6 @@ class Contacto(models.Model):
     def __str__(self):
         return self.Correo
 
-class Usuario(models.Model):
-    RutPersona = models.CharField(primary_key=True, max_length=50)
-    Contrasena = models.CharField(max_length=50)
-    Tipo = models.BooleanField()
-
-    def __str__(self):
-        return self.RutPersona
-
 class Provincia(models.Model):
     IdProvincia = models.IntegerField(primary_key=True)
     Descripcion = models.CharField(max_length=50)
