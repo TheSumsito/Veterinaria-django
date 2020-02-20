@@ -507,7 +507,7 @@
 .container-reg-mascota {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    grid-template-rows: repeat(32, .1fr);
+    grid-template-rows: repeat(40, .1fr);
     background-color: var(--lightgray);
 }
 
@@ -526,6 +526,7 @@
 .container-reg-mascota .detalle-mascota {
     grid-column: 3/6;
     grid-row: 3/4;
+    grid-auto-rows: auto;
     position: relative;
     top: 80px;
     text-align: center; 
@@ -567,9 +568,11 @@
 }
 
 .container-reg-mascota .boton {
-    grid-row: 15/15;
+    grid-row: 13/13;
     grid-column: 1/-1;
     text-align: center;
+    position: relative;
+    top: 60px;
 }
 
 
@@ -580,6 +583,140 @@
     background-color: var(--blue);
     border: .5px solid var(--blue);
 }
+/* ------------------------------------------------ */
+.reg-mascota {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(13, 1fr);
+    background-color: var(--lightgray);
+}
+
+.reg-mascota .titulo {
+    grid-column: 3/6;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+.reg-mascota .buscar {
+    grid-row: 2/2;
+    grid-column: 3/6;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+.reg-mascota .identificador {
+    grid-column: 3/4;
+    grid-row: 4/4;
+    text-align: center;
+}
+
+.reg-mascota .rutpersona {
+    grid-column: 5/6;
+    grid-row: 4/4;
+    text-align: center;
+}
+
+.reg-mascota .nombre {
+    grid-column: 3/4;
+    grid-row: 6/6;
+    text-align: center;
+}
+
+.reg-mascota .color {
+    grid-column: 5/6;
+    grid-row: 6/6;
+    text-align: center;
+}
+
+.reg-mascota .tamano {
+    grid-column: 3/4;
+    grid-row: 8/8;
+    text-align: center;
+}
+
+.reg-mascota .peso {
+    grid-column: 5/6;
+    grid-row: 8/8;
+    text-align: center;
+}
+
+.reg-mascota .raza {
+    grid-column: 3/4;
+    grid-row: 10/10;
+    text-align: center;
+}
+
+.reg-mascota .genero {
+    grid-column: 5/6;
+    grid-row: 10/10;
+    text-align: center;
+}
+
+.reg-mascota .boton {
+    grid-row: 12/12;
+    grid-column: 4/5;
+    text-align: center;
+}
+
+.reg-mascota .titulo h1 {
+    font-family: 'Roboto';
+    color: var(--blue);
+}
+
+.reg-mascota .identificador, p,
+.reg-mascota .nombre p,
+.reg-mascota .rutpersona p,
+.reg-mascota .color p,
+.reg-mascota .tamano p,
+.reg-mascota .peso p,
+.reg-mascota .raza p,
+.reg-mascota .genero p {
+    font-family: 'Roboto';
+    color: var(--black);
+}
+
+
+.reg-mascota .identificador input,
+.reg-mascota .rutpersona input,
+.reg-mascota .nombre input,
+.reg-mascota .color input,
+.reg-mascota .peso input {
+    font-family: 'Roboto';
+    text-align: center;
+    padding: 3px 32px;
+}
+
+.reg-mascota .tamano select,
+.reg-mascota .genero select {
+    font-family: 'Roboto';
+    padding: 3px 60px;
+    text-align: center;
+}
+
+.reg-mascota .raza select  {
+    padding: 5px;
+    text-align: center;
+}
+
+.reg-mascota .boton input {
+    padding: 7px 15px;
+    font-family: 'Roboto';
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+}
+
+
+/* ------------------------------------------------ */
+
+
+
+
+
+
+
 
 
 /* ------------- VER CITAS ADMIN ---------- */

@@ -25,4 +25,9 @@ urlpatterns = [
     #! VISTAS ADMINISTRADOR
     path('admin-Mascota/', AdminMascota, name="AdminMascota"),
     path('aprobar-cita/', AprobarCita, name="AprobarCita"),
+
+
+    path('reg-mascota/', regMascota, name="regMascota"),
+    path('eli-mascota/', eliMascota, name="eliMascota"),
+    path('mod-mascota/', modMascota, name="modMascota"),
 ]

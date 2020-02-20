@@ -1,52 +1,52 @@
-.container-reg-mascota .identificador {
+.reg-mascota .identificador {
     grid-column: 3/4;
     grid-row: 7/7;
     text-align: center;
 }
 
-.container-reg-mascota .rutpersona {
+.reg-mascota .rutpersona {
     grid-column: 5/6;
     grid-row: 7/7;
     text-align: center;
 }
 
-.container-reg-mascota .nombre {
+.reg-mascota .nombre {
     grid-column: 3/4;
     grid-row: 9/9;
     text-align: center;
 }
 
-.container-reg-mascota .color {
+.reg-mascota .color {
     grid-column: 5/6;
     grid-row: 9/9;
     text-align: center;
 }
 
-.container-reg-mascota .tamano {
+.reg-mascota .tamano {
     grid-column: 3/4;
     grid-row: 11/11;
     text-align: center;
 }
 
-.container-reg-mascota .peso {
+.reg-mascota .peso {
     grid-column: 5/6;
     grid-row: 11/11;
     text-align: center;
 }
 
-.container-reg-mascota .raza {
+.reg-mascota .raza {
     grid-column: 3/4;
     grid-row: 13/13;
     text-align: center;
 }
 
-.container-reg-mascota .genero {
+.reg-mascota .genero {
     grid-column: 5/6;
     grid-row: 13/13;
     text-align: center;
 }
 
-.container-reg-mascota .boton {
+.reg-mascota .boton {
     grid-row: 15/15;
     grid-column: 4/5;
     text-align: center;

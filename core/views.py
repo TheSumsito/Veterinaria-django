@@ -225,7 +225,7 @@ def AnularCita(request):
             return render(request, '../Templates/usuario/anular-cita.htm', {'per': persona, 'mascotas': mascotas, 'citas': cita_id})
 
         else:
-            return render(request, '../templates/usuario/anular-cita.htm', {'per': persona, 'mascotas': mascotas, 'citas': cita})
+            return render(request, '../templates/usuario/anular-cita.htm', {'per': persona, 'mascotas': mascotas, 'citas': cita_id})
     return render(request, '../templates/usuario/anular-cita.htm', {'per': persona, 'mascotas': mascotas})
 
 
@@ -242,8 +242,7 @@ def FichaPaciente(request):
         accion = request.POST.get("btnAccion", "")
         if accion == "Buscar":
             nombre_id = request.POST.get("cboNombre", "")
-            desparacitacion = FichaDesparacitacion.objects.filter(
-                IdMascota=nombre_id)
+            desparacitacion = FichaDesparacitacion.objects.filter(IdMascota=nombre_id)
             vacunas = FichaVacunacion.objects.filter(IdMascota=nombre_id)
             name = Mascota.objects.get(IdMascota=nombre_id)
             mascota = Mascota.objects.filter(IdMascota=nombre_id)
@@ -263,8 +262,62 @@ def homeAdmin(request):
 
 
 def AdminMascota(request):
-    mascotas = Mascota.objects.all()
-    return render(request, '../templates/administrador/admin-mascota.htm', {'mascotas':mascotas})
+    return render(request, '../templates/administrador/admin-mascota.htm')
+
+
+def regMascota(request):
+    user = auth.authenticate()
+    username = request.user.username
+    tamanos = Tamano.objects.all()
+    razas = Raza.objects.all()
+    generos = Genero.objects.all()
+
+
+    if request.POST:
+        accion = request.POST.get("btnAccion", "")
+        if accion == "Buscar":
+            rutpersona = request.POST.get("txtRut", "")
+            random = randint(0, 99999)
+            return render(request, '../templates/administrador/reg-mascota.htm', {'username':username, 'rutpersona':rutpersona, 'random':random, 'razas':razas, 'generos':generos, 'tamanos':tamanos})
+        elif accion == "Registrar Mascota":
+            identificador = request.POST.get("txtIdentificador", "")
+            nombre = request.POST.get("txtNombre", "")
+            rut_persona = request.POST.get("txtRutPersona", "")
+            color = request.POST.get("txtColor", "")
+            idtamano = request.POST.get("cboTamano", "")
+            peso = request.POST.get("txtPeso", "")
+            idraza = request.POST.get("cboRaza", "")
+            idgenero = request.POST.get("cboGenero", "")
+
+            #! INSTANCE
+            tamano_id = Tamano.objects.get(IdTamano=idtamano)
+            raza_id = Raza.objects.get(IdRaza=idraza)
+            genero_id = Genero.objects.get(IdGenero=idgenero)
+            rut_id = Persona.objects.get(RutPersona=rut_persona)
+
+            masc = Mascota(
+                IdMascota=identificador,
+                Nombre=nombre,
+                Color=color,
+                IdTamano=tamano_id,
+                Peso=peso,
+                RutPersona=rut_id,
+                IdRaza=raza_id,
+                IdGenero=genero_id
+            )
+            masc.save()
+            return render(request, '../templates/Administrador/reg-mascota.htm', {'username':username, 'razas':razas, 'generos':generos, 'tamanos':tamanos})
+    return render(request, '../templates/administrador/reg-mascota.htm', {'username':username, 'razas':razas, 'generos':generos, 'tamanos':tamanos})
+
+def eliMascota(request):
+    user = auth.authenticate()
+    username = request.user.username
+    return render(request, '../templates/administrador/eli-mascota.htm', {'username':username})
+
+def modMascota(request):
+    user = auth.authenticate()
+    username = request.user.username
+    return render(request, '../templates/administrador/mod-mascota.htm', {'username':username})
 
 def AprobarCita(request):
     user = auth.authenticate()
