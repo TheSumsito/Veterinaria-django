@@ -57,13 +57,13 @@
             {% if user.is_authenticated == True and user.is_staff == True %}
             <ul>
                 <li><a href="{% url 'homeAdmin' %}" class="active"><span class="icon-inicio"></span>{{username}}</a></li>
-                <li><a href="{% url 'AdminMascota' %}"><span class="icon-servicios"></span>Detalle Citas</a>
+                <li><a href=""><span class="icon-servicios"></span>Detalle Citas</a>
                 </li>
                 <li><a href=""><span class="icon-planes"></span>Administrar Mascotas</a>
                     <ul class="submenu">
                         <li><a href="{% url 'regMascota' %}">Registrar Mascota</a></li>
-                        <li><a href="agendar.htm">Modificar Mascota</a></li>
-                        <li><a href="">Eliminar Mascota</a></li>
+                        <li><a href="{% url 'modMascota' %}">Modificar Mascota</a></li>
+                        <li><a href="{% url 'eliMascota' %}">Eliminar Mascota</a></li>
                     </ul>
                 </li>
                 <li><a href="{% url 'cerrar' %}"><span class="icon-login"></span>Cerrar Sesion</a></li>

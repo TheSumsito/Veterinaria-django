@@ -261,10 +261,6 @@ def homeAdmin(request):
     return render(request, '../templates/administrador/index.htm', {'username': username, 'contactos': contactos})
 
 
-def AdminMascota(request):
-    return render(request, '../templates/administrador/admin-mascota.htm')
-
-
 def regMascota(request):
     user = auth.authenticate()
     username = request.user.username
@@ -317,7 +313,8 @@ def eliMascota(request):
 def modMascota(request):
     user = auth.authenticate()
     username = request.user.username
-    return render(request, '../templates/administrador/mod-mascota.htm', {'username':username})
+    razas = Raza.objects.all()
+    return render(request, '../templates/administrador/mod-mascota.htm', {'username':username, 'razas': razas})
 
 def AprobarCita(request):
     user = auth.authenticate()

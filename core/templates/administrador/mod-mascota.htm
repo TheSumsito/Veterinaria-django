@@ -4,4 +4,62 @@
 {% endblock head %}
 
 {% block body %}
+    <form method="POST">
+        <div class="mod-mascota">
+            <div class="titulo">
+                <h1>Modificar Mascota</h1>
+            </div>
+            <div class="filtrar">
+                <div class="persona">
+                    <p>Rut Cliente</p>
+                    <input type="text" name="txtRut" id="txtRut">
+                </div>
+                <div class="mascota">
+                    <p>Nombre Mascota</p>
+                    <select name="cboMascota" id="cboMascota">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+            </div>
+            <div class="formulario">
+                <div class="nombre">
+                    <p>Nombre</p>
+                    <input type="text" name="txtNombre" id="txtNombre">
+                </div>
+                <div class="color">
+                    <p>Color</p>
+                    <input type="text" name="txtColor" id="txtColor">
+                </div>
+                <div class="tamano">
+                    <p>Tamaño</p>
+                    <select name="cboTamano" id="cboTamano">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+                <div class="peso">
+                    <p>Peso</p>
+                    <input type="text" name="txtPeso" id="txtPeso">
+                </div>
+                <div class="raza">
+                    <p>Raza</p>
+                    <select name="cboRaza" id="cboRaza">
+                        <option value="">Seleccionar</option>
+                        {% for ra in razas %}
+                            <option value="">{{ra.Descripcion}}</option>
+                        {% endfor %}
+                    </select>                    
+                </div>
+                <div class="genero">
+                    <p>Genero</p>
+                    <select name="cboGenero" id="cboGenero">
+                        <option value="">Seleccionar</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
+
+
 {% endblock body %}

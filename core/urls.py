@@ -23,7 +23,6 @@ urlpatterns = [
     path('ficha-paciente/', FichaPaciente, name="FichaPaciente"),
 
     #! VISTAS ADMINISTRADOR
-    path('admin-Mascota/', AdminMascota, name="AdminMascota"),
     path('aprobar-cita/', AprobarCita, name="AprobarCita"),
 
 
