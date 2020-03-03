@@ -805,3 +805,183 @@
     padding: 3px 10px;
     font-family: 'Roboto';
 }
+
+/* ------------------------------------------ */
+.mod-mascota {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: var(--lightgray);
+}
+
+.mod-mascota .titulo {
+    grid-column: 3/6;
+    grid-row: 1/2;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+.mod-mascota .filtrar {
+    grid-column: 1/-1;
+    grid-row: 2/3;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+}
+
+.mod-mascota .filtrar .persona {
+    grid-column: 4/5;
+}
+
+.mod-mascota .filtrar .mascota {
+    grid-column: 5/6;
+}
+
+.mod-mascota .filtrar .buscar {
+    grid-column: 6/7;
+}
+
+.mod-mascota .formulario {
+    grid-column: 1/-1;
+    grid-row: 3/6;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+}
+
+.mod-mascota .formulario .nombre {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.mod-mascota .formulario .color {
+    grid-column: 5/6;
+    grid-row: 1/2;
+}
+
+.mod-mascota .formulario .tamano {
+    grid-column: 3/4;
+    grid-row: 3/4;
+}
+
+.mod-mascota .formulario .peso {
+    grid-column: 5/6;
+    grid-row: 3/4;
+}
+
+.mod-mascota .formulario .raza {
+    grid-column: 3/4;
+    grid-row: 5/6;
+}
+
+.mod-mascota .formulario .genero {
+    grid-column: 5/6;
+    grid-row: 5/6;
+}
+
+.mod-mascota .formulario .boton {
+    grid-column: 3/6;
+    grid-row: 7/8;
+    text-align: center;
+}
+
+.mod-mascota .titulo h1 {
+    color: var(--blue);
+    font-family: 'roboto';
+}
+
+.mod-mascota .filtrar .persona p,
+.mod-mascota .filtrar .mascota p {
+    font-family: 'roboto';
+    color: var(--darkgray);
+    margin-left: 20px;
+}
+
+.mod-mascota .filtrar .persona input {
+    text-align: center;
+    font-family: 'roboto';
+    width: 200px;
+    margin-left: 20px;
+    height: 25px;
+}
+
+.mod-mascota .filtrar .persona span input {
+    width: 80px;
+    font-family: 'roboto';
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+    position: relative;
+    left: 60px;
+    top: 10px;
+}
+
+.mod-mascota .filtrar .mascota select {
+    text-align-last: center;
+    font-family: 'roboto';
+    width: 200px;
+    margin-left: 20px;
+    height: 30px;
+}
+
+.mod-mascota .filtrar .boton input {
+    width: 70px;
+    height: 30px;
+    font-family: 'roboto';
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+    position: relative;
+    top: 18px;
+    left: 20px;
+    
+}
+
+.mod-mascota .formulario .nombre p,
+.mod-mascota .formulario .color p,
+.mod-mascota .formulario .tamano p,
+.mod-mascota .formulario .peso p,
+.mod-mascota .formulario .raza p,
+.mod-mascota .formulario .genero p {
+    font-family: 'roboto';
+}
+
+.mod-mascota .formulario .nombre input,
+.mod-mascota .formulario .color input,
+.mod-mascota .formulario .peso input {
+    font-family: 'roboto';
+    text-align: center;
+    width: 200px;
+    height: 25px;
+}
+
+.mod-mascota .formulario .raza select {
+    font-family: 'roboto';
+    text-align: center;
+    width: 200px;
+    height: 30px;
+    text-align-last: center;
+}
+
+
+.mod-mascota .formulario .genero select,
+.mod-mascota .formulario .tamano select {
+    width: 204px;
+    height: 30px;
+    text-align-last: center;
+}
+
+
+.mod-mascota .formulario .boton input {
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+    font-family: 'roboto';
+    padding: 7px 13px;
+}
+
+
+
+
+
+/* ------------------------------------------ */

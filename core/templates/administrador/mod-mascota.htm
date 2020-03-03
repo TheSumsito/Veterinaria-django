@@ -4,7 +4,8 @@
 {% endblock head %}
 
 {% block body %}
-    <form method="POST">
+    <form method="POST" autocomplete="off">
+        {% csrf_token %}
         <div class="mod-mascota">
             <div class="titulo">
                 <h1>Modificar Mascota</h1>
@@ -12,49 +13,119 @@
             <div class="filtrar">
                 <div class="persona">
                     <p>Rut Cliente</p>
-                    <input type="text" name="txtRut" id="txtRut">
+                    {% if rut_per == null %}
+                        <input type="text" name="txtRut" id="txtRut" value="{{rutpersona}}">
+                    {% endif %}
+                    {% if rut_per != null %}
+                        <input type="text" name="txtRut" id="txtRut" value="{{rut_per}}">
+                    {% endif %}
+                    <span><input type="submit" name="btnAccion" value="Buscar"></span>
                 </div>
                 <div class="mascota">
                     <p>Nombre Mascota</p>
-                    <select name="cboMascota" id="cboMascota">
-                        <option value="">Seleccionar</option>
-                    </select>
+                    {% if mascotas == null %}
+                        <select name="cboMascota" id="cboMascota" disabled>
+                            <option value=""></option>
+                        </select>
+                    {% endif %}
+                    {% if mascotas != null %}
+                        <select name="cboMascota" id="cboMascota">
+                            <option value="">Seleccionar</option>
+                            {% for mas in mascotas %}
+                                <option value="{{mas.IdMascota}}">{{mas.Nombre}}</option>
+                            {% endfor %}
+                        </select>
+                    {% endif %}
+                </div>
+                <div class="boton">
+                    <input type="submit" name="btnAccion" value="Ingresar">
                 </div>
             </div>
             <div class="formulario">
                 <div class="nombre">
-                    <p>Nombre</p>
-                    <input type="text" name="txtNombre" id="txtNombre">
+                    {% if mas.Nombre == null %}
+                        <p>Nombre</p>
+                        <input type="text" name="txtNombre" id="txtNombre" value="" disabled>
+                    {% endif %}
+                    {% if mas.Nombre != null %}
+                        <p>Nombre</p>
+                        <input type="text" name="txtNombre" id="txtNombre" value="{{mas.Nombre}}" readonly>
+                    {% endif %}
                 </div>
                 <div class="color">
-                    <p>Color</p>
-                    <input type="text" name="txtColor" id="txtColor">
+                    {% if mas.Color == null %}
+                        <p>Color</p>
+                        <input type="text" name="txtColor" id="txtColor" value="" disabled>
+                    {% endif %}
+                    {% if mas.Color != null %}
+                        <p>Color: {{mas.Color}}</p>
+                        <input type="text" name="txtColor" id="txtColor" value="">
+                    {% endif %}
                 </div>
                 <div class="tamano">
-                    <p>Tamaño</p>
-                    <select name="cboTamano" id="cboTamano">
-                        <option value="">Seleccionar</option>
-                    </select>
+                    {% if mas.IdTamano == null %}
+                        <p>Tamaño <span>{{mas.IdTamano}}</span></p>
+                        <select name="cboTamano" id="cboTamano" disabled>
+                            <option value=""></option>
+                        </select>
+                    {% endif %}
+                    {% if mas.IdTamano != null %}
+                        <p>Tamaño: {{mas.IdTamano}}</p>
+                        <select name="cboTamano" id="cboTamano">
+                            <option value="">Seleccionar</option>
+                            {% for tam in tamanos %}
+                                <option value="{{tam.IdTamano}}">{{tam.Descripcion}}</option>
+                            {% endfor %}
+                        </select>
+                    {% endif %}
                 </div>
                 <div class="peso">
-                    <p>Peso</p>
-                    <input type="text" name="txtPeso" id="txtPeso">
+                    {% if mas.Peso == null %}
+                        <p>Peso</p>
+                        <input type="text" name="txtPeso" id="txtPeso" value="" disabled>
+                    {% endif %}
+                    {% if mas.Peso != null %}
+                        <p>Peso: {{mas.Peso}} Kg</p>
+                        <input type="text" name="txtPeso" id="txtPeso" value="">
+                    {% endif %}
                 </div>
                 <div class="raza">
-                    <p>Raza</p>
-                    <select name="cboRaza" id="cboRaza">
-                        <option value="">Seleccionar</option>
-                        {% for ra in razas %}
-                            <option value="">{{ra.Descripcion}}</option>
-                        {% endfor %}
-                    </select>                    
+                    {% if mas.IdRaza == null %}
+                        <p>Raza</p>
+                        <select name="cboRaza" id="cboRaza" disabled>
+                            <option value=""></option>
+                        </select>   
+                    {% endif %}
+                    {% if mas.IdRaza != null %}
+                        <p>Raza: {{mas.IdRaza}}</p>
+                        <select name="cboRaza" id="cboRaza">
+                            <option value="">Seleccionar</option>
+                            {% for ra in razas %}
+                                <option value="{{ra.IdRaza}}">{{ra.Descripcion}}</option>
+                            {% endfor %}
+                        </select>    
+                    {% endif %}
                 </div>
                 <div class="genero">
-                    <p>Genero</p>
-                    <select name="cboGenero" id="cboGenero">
-                        <option value="">Seleccionar</option>
-                    </select>
+                    {% if mas.IdGenero == null %}
+                        <p>Genero</p>
+                        <select name="cboGenero" id="cboGenero" disabled>
+                            <option value=""></option>
+                        </select>
+                    {% endif %}
+                    {% if mas.IdGenero != null %}
+                        <p>Genero: {{mas.IdGenero}}</p>
+                        <select name="cboGenero" id="cboGenero">
+                            <option value="">Seleccionar</option>
+                            {% for gen in generos %}
+                                <option value="{{gen.IdGenero}}">{{gen.Descripcion}}</option>
+                            {% endfor %}
+                        </select>  
+                    {% endif %}
                 </div>
+                <div class="boton">
+                    <input type="submit" name="btnAccion" value="Actualizar">
+                </div> 
             </div>
         </div>
     </form>

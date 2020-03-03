@@ -313,8 +313,61 @@ def eliMascota(request):
 def modMascota(request):
     user = auth.authenticate()
     username = request.user.username
+
+    tamanos = Tamano.objects.all()
     razas = Raza.objects.all()
-    return render(request, '../templates/administrador/mod-mascota.htm', {'username':username, 'razas': razas})
+    generos = Genero.objects.all()
+
+    if request.POST:
+        accion = request.POST.get("btnAccion", "")
+        if accion == "Buscar":
+            rutpersona = request.POST.get("txtRut", "")
+            mascotas = Mascota.objects.filter(RutPersona=rutpersona)
+            return render(request, '../templates/administrador/mod-mascota.htm', {'mascotas':mascotas, 'rutpersona':rutpersona, 'username':username})
+        elif accion == "Ingresar":
+            mascota_id = request.POST.get("cboMascota", "")
+            mascota = Mascota.objects.get(IdMascota=mascota_id)
+            
+            rut_per = request.POST.get("txtRut", "")
+            mascotas = Mascota.objects.filter(RutPersona=rut_per)
+            return render(request, '../templates/administrador/mod-mascota.htm', {'mas':mascota, 'rut_per':rut_per, 'mascotas':mascotas, 'username':username, 'tamanos':tamanos ,'razas': razas, 'generos':generos})
+
+        elif accion == "Actualizar":
+
+            rut_per = request.POST.get("txtRut", "")
+            mascotas = Mascota.objects.filter(RutPersona=rut_per)
+
+
+
+            name = request.POST.get("txtNombre", "") 
+            mas = Mascota.objects.get(Nombre=name)
+
+
+            nombre = request.POST.get("txtNombre", "")
+            color = request.POST.get("txtColor", "")
+            tamano = request.POST.get("cboTamano", "")
+            peso = request.POST.get("txtPeso", "")
+            raza = request.POST.get("cboRaza", "")
+            genero = request.POST.get("cboGenero", "")
+
+            #! INSTANCE
+            tamano_id = Tamano.objects.get(IdTamano=tamano)
+            raza_id = Raza.objects.get(IdRaza=raza)
+            genero_id = Genero.objects.get(IdGenero=genero)
+
+            mas.Nombre=nombre
+            mas.Color=color
+            mas.IdTamano=tamano_id
+            mas.Peso=peso
+            mas.IdRaza=raza_id
+            mas.IdGenero=genero_id
+
+            mas.save()
+            return render(request, '../templates/administrador/mod-mascota.htm', {'username':username, 'tamanos':tamanos ,'razas': razas, 'generos':generos, 'rut_per':rut_per, 'mascotas':mascotas})
+
+
+
+    return render(request, '../templates/administrador/mod-mascota.htm', {'username':username})
 
 def AprobarCita(request):
     user = auth.authenticate()
