@@ -1,0 +1,55 @@
+{% extends 'complements/principal.htm' %}
+{% block head %}
+{% endblock head %}
+
+{% block body %}
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="mod-cita">
+        <div class="titulo">
+            <h1>Modificar Cita</h1>
+        </div>
+        <div class="filtrar">
+            <div class="fecha">
+                <p>Seleccione la Fecha</p>
+                <input type="date" name="txtFecha" id="txtFecha" value="{{fecha}}">
+                <span><input type="submit" name="btnAccion" value="Filtrar"></span>
+            </div>
+            <div class="mascota">
+                <p>Nombre Mascota</p>
+                <select name="cboMascota" id="cboMascota">
+                    <option value="">Seleccionar</option>
+                    {% for mas in mascotas %}
+                        <option value="{{mas.IdMascota}}">{{mas.IdMascota}}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="boton">
+                <input type="submit" name="btnAccion" value="Ingresar">
+            </div>
+        </div>
+        <div class="formulario">
+            <div class="identificador">
+                <p>Identificador</p>
+                <input type="text" name="txtIdentificador" id="txtIdentificador" value="{{cita.IdCita}}" readonly>
+            </div>
+            <div class="nombre">
+                <p>Nombre Mascota</p>
+                <input type="text" name="txtNombre" id="txtNombre" value="{{mascota.Nombre}}" disabled>
+            </div>
+            <div class="tipo">
+                <p>Tipo Consulta</p>
+                <input type="text" name="txtTipo" id="txtTipo" value="{{cita.IdTipo}}" disabled>
+            </div>
+            <div class="descripcion">
+                <p>Descripcion Consulta</p>
+                <textarea name="txtDescripcion" id="txtDescripcion" cols="40" rows="5">{{cita.Descripcion}}</textarea>
+            </div>
+            <div class="boton">
+                <input type="submit" name="btnAccion" value="Guardar">
+            </div>
+        </div>
+    </div>
+</form>
+
+{% endblock body %}

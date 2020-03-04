@@ -1,0 +1,310 @@
+
+@import 'https://fonts.googleapis.com/css?family=Roboto&display=swap';
+:root {
+    --blue: rgb(62, 118, 174);
+    --gray: #b6b6b6;
+    --lightgray: #F0F0F0;
+    --darkgray: rgb(105, 105, 105);
+    --black: #343434;
+    --white: rgb(182, 182, 182);
+}
+
+.conf-cita {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    background-color: var(--lightgray);
+}
+
+.conf-cita .titulo {
+    grid-column: 3/6;
+    grid-row: 1/2;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+.conf-cita .filtrar {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, .5fr);
+    position: relative;
+    top: 30px;
+}
+
+.conf-cita .filtrar .fecha {
+    grid-column: 3/4;
+}
+
+.conf-cita .filtrar .mascota {
+    grid-column: 4/5;
+}
+
+.conf-cita .filtrar .boton {
+    grid-column: 5/6;
+    position: relative;
+    right: 60px;
+    top: 18px;
+}
+
+.conf-cita .formulario {
+    grid-row: 3/-1;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, .5fr);
+    position: relative;
+    top: 60px;
+}
+
+.conf-cita .formulario .identificador {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.conf-cita .formulario .nombre {
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+.conf-cita .formulario .tipo {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.conf-cita .formulario .descripcion {
+    grid-column: 4/5;   
+    grid-row: 2/3;
+}
+
+.conf-cita .formulario .boton {
+    grid-column: 3/4;
+    grid-row: 2/3; 
+    position: relative;
+    left: 55px;
+    top: 70px;
+}
+
+.conf-cita .titulo h1 {
+    color: var(--blue);
+    font-family: 'roboto';
+}
+
+.conf-cita .filtrar .fecha p,
+.conf-cita .filtrar .mascota p {
+    font-family: 'roboto';
+    color: var(--darkgray);
+}
+
+.conf-cita .filtrar .fecha input {
+    text-align: center;
+    font-family: 'roboto';
+    width: 180px;
+    height: 20px;
+}
+
+.conf-cita .filtrar .mascota select {
+    text-align-last: center;
+    width: 180px;
+    height: 25px;
+}
+
+.conf-cita .filtrar .boton input {
+    width: 80px;
+    height: 25px;
+    position: relative;
+    color: white;
+    background-color:  var(--blue);
+    border: .5px solid var(--blue);
+    font-family: 'roboto';
+}
+
+.conf-cita .formulario .identificador p,
+.conf-cita .formulario .nombre p,
+.conf-cita .formulario .tipo p,
+.conf-cita .formulario .descripcion p {
+    color: var(--darkgray);
+    font-family: 'roboto';
+}
+
+.conf-cita .formulario .identificador input,
+.conf-cita .formulario .nombre input,
+.conf-cita .formulario .tipo input {
+    font-family: 'roboto';
+    text-align: center;
+    width: 180px;
+    height: 25px;
+}
+
+.conf-cita .formulario .descripcion textarea {
+    font-family: 'roboto';
+    position: absolute;
+}
+
+.conf-cita .formulario .boton input {
+    width: 80px;
+    height: 25px;
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+    font-family: 'roboto';
+}
+
+
+/* ------------------------------------------------- */
+.mod-cita {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    background-color: var(--lightgray);
+}
+
+.mod-cita .titulo {
+    grid-column: 3/6;
+    grid-row: 1/2;
+    text-align: center;
+    position: relative;
+    top: 20px;
+}
+
+.mod-cita .filtrar {
+    grid-row: 2/3;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(2, .5fr);
+    position: relative;
+    top: 30px;
+}
+
+.mod-cita .filtrar .fecha {
+    grid-column: 3/4;
+}
+
+.mod-cita .filtrar .mascota {
+    grid-column: 4/5;
+}
+
+.mod-cita .filtrar .boton {
+    grid-column: 5/6;
+    position: relative;
+    right: 60px;
+    top: 18px;
+}
+
+.mod-cita .formulario {
+    grid-row: 3/-1;
+    grid-column: 1/-1;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, .5fr);
+    position: relative;
+    top: 60px;
+}
+
+.mod-cita .formulario .identificador {
+    grid-column: 3/4;
+    grid-row: 1/2;
+}
+
+.mod-cita .formulario .nombre {
+    grid-column: 4/5;
+    grid-row: 1/2;
+}
+
+.mod-cita .formulario .tipo {
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.mod-cita .formulario .descripcion {
+    grid-column: 4/5;   
+    grid-row: 2/3;
+}
+
+.mod-cita .formulario .boton {
+    grid-column: 3/4;
+    grid-row: 2/3; 
+    position: relative;
+    left: 55px;
+    top: 70px;
+}
+
+.mod-cita .titulo h1 {
+    color: var(--blue);
+    font-family: 'roboto';
+}
+
+.mod-cita .filtrar .fecha p,
+.mod-cita .filtrar .mascota p {
+    font-family: 'roboto';
+    color: var(--darkgray);
+}
+
+.mod-cita .filtrar .fecha input {
+    text-align: center;
+    font-family: 'roboto';
+    width: 180px;
+    height: 20px;
+}
+
+.mod-cita .filtrar .fecha span input {
+    width: 80px;
+    height: 25px;
+    position: relative;
+    left: 50px;
+    top: 10px;
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+    font-family: 'roboto';
+}
+
+.mod-cita .filtrar .mascota select {
+    text-align-last: center;
+    width: 180px;
+    height: 25px;
+}
+
+.mod-cita .filtrar .boton input {
+    width: 80px;
+    height: 25px;
+    position: relative;
+    color: white;
+    background-color:  var(--blue);
+    border: .5px solid var(--blue);
+    font-family: 'roboto';
+}
+
+.mod-cita .formulario .identificador p,
+.mod-cita .formulario .nombre p,
+.mod-cita .formulario .tipo p,
+.mod-cita .formulario .descripcion p {
+    color: var(--darkgray);
+    font-family: 'roboto';
+}
+
+.mod-cita .formulario .identificador input,
+.mod-cita .formulario .nombre input,
+.mod-cita .formulario .tipo input {
+    font-family: 'roboto';
+    text-align: center;
+    width: 180px;
+    height: 25px;
+}
+
+.mod-cita .formulario .descripcion textarea {
+    font-family: 'roboto';
+    position: absolute;
+}
+
+.mod-cita .formulario .boton input {
+    width: 80px;
+    height: 25px;
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+    font-family: 'roboto';
+}

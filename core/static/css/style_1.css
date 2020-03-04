@@ -979,9 +979,129 @@
     font-family: 'roboto';
     padding: 7px 13px;
 }
-
-
-
-
-
 /* ------------------------------------------ */
+
+.eli-mascota {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(8, 1fr);
+    background-color: var(--lightgray);
+}
+
+.eli-mascota .titulo {
+    grid-column: 3/6;
+    grid-row: 1/2;
+    text-align: center;
+    position: relative;
+    top: 30px;
+}
+
+.eli-mascota .filtrar {
+    grid-column: 3/6;
+    grid-row: 3/4;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.eli-mascota .filtrar .persona {
+    grid-column: 2/3;
+}
+
+.eli-mascota .filtrar .mascota {
+    grid-column: 4/6;
+}
+
+.eli-mascota .formulario {
+    grid-column: 3/6;
+    grid-row: 3/6;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
+
+.eli-mascota .formulario .identificador {
+    grid-column: 2/3;
+    grid-row: 4/5;
+}
+
+.eli-mascota .formulario .nombre {
+    grid-column: 4/6;
+    grid-row: 4/5;
+}
+
+.eli-mascota .formulario .boton {
+    grid-column: 3/6;
+    grid-row: 6/7;
+    position: relative;
+    top: 60px;
+}
+
+.eli-mascota .titulo h1 {
+    font-family: 'roboto';
+    color: var(--blue);
+}
+
+.eli-mascota .filtrar .persona p,
+.eli-mascota .filtrar .mascota p {
+    font-family: 'roboto';
+    color: var(--darkgray);
+}
+
+.eli-mascota .filtrar .persona input {
+    height: 20px;
+    width: 155px;
+    text-align: center;
+    font-family: 'roboto';
+}
+
+.eli-mascota .filtrar .mascota select {
+    height: 25px;
+    width: 155px;
+    text-align-last: center;
+}
+
+.eli-mascota .formulario .identificador p,
+.eli-mascota .formulario .nombre p {
+    font-family: 'roboto';
+    color: var(--darkgray);
+}
+
+.eli-mascota .formulario .identificador input,
+.eli-mascota .formulario .nombre input {
+    font-family: 'roboto';
+    height: 20px;
+    width: 155px;
+    text-align: center; 
+}
+
+.eli-mascota .filtrar .persona span input {
+    width: 60px;
+    height: 25px;
+    font-family: 'roboto';
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+    position: relative;
+    left: 50px;
+    top: 5px;
+}
+
+.eli-mascota .filtrar .boton input {
+    width: 60px;
+    height: 25px;  
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+    font-family: 'roboto';
+    position: relative;
+    top: 18px;
+}
+
+.eli-mascota .formulario .boton input {
+    width: 70px;
+    height: 30px;
+    color: white;
+    background-color: var(--blue);
+    border: .5px solid var(--blue);
+    font-family: 'roboto';
+}

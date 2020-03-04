@@ -308,6 +308,23 @@ def regMascota(request):
 def eliMascota(request):
     user = auth.authenticate()
     username = request.user.username
+    if request.POST:
+        accion = request.POST.get("btnAccion", "")
+        if accion == "Buscar":
+            rutpersona = request.POST.get("txtRut", "")
+            mascotas = Mascota.objects.filter(RutPersona=rutpersona)
+            return render(request, '../templates/administrador/eli-mascota.htm', {'mascotas':mascotas, 'username':username, 'rutpersona':rutpersona})
+        elif accion == "Ingresar":
+            mascota_id = request.POST.get("cboMascota", "")
+            mascota = Mascota.objects.get(IdMascota=mascota_id)
+
+            rutpersona = request.POST.get("txtRut", "")
+            mascotas = Mascota.objects.filter(RutPersona=rutpersona)
+            return render(request, '../templates/administrador/eli-mascota.htm', {'mas':mascota, 'mascotas':mascotas, 'rutpersona':rutpersona, 'username':username})
+        elif accion == "Eliminar":
+            identificador = request.POST.get("txtIdentificador", "")
+            mas = Mascota.objects.get(IdMascota=identificador)
+            mas.delete()
     return render(request, '../templates/administrador/eli-mascota.htm', {'username':username})
 
 def modMascota(request):
@@ -333,15 +350,11 @@ def modMascota(request):
             return render(request, '../templates/administrador/mod-mascota.htm', {'mas':mascota, 'rut_per':rut_per, 'mascotas':mascotas, 'username':username, 'tamanos':tamanos ,'razas': razas, 'generos':generos})
 
         elif accion == "Actualizar":
-
             rut_per = request.POST.get("txtRut", "")
             mascotas = Mascota.objects.filter(RutPersona=rut_per)
 
-
-
             name = request.POST.get("txtNombre", "") 
             mas = Mascota.objects.get(Nombre=name)
-
 
             nombre = request.POST.get("txtNombre", "")
             color = request.POST.get("txtColor", "")
@@ -364,13 +377,76 @@ def modMascota(request):
 
             mas.save()
             return render(request, '../templates/administrador/mod-mascota.htm', {'username':username, 'tamanos':tamanos ,'razas': razas, 'generos':generos, 'rut_per':rut_per, 'mascotas':mascotas})
-
-
-
     return render(request, '../templates/administrador/mod-mascota.htm', {'username':username})
 
-def AprobarCita(request):
+
+#! CITAS
+def confirmarCita(request):
+    return render(request, '../templates/administrador/citas/conf-cita.htm')
+
+def ingresarCita(request):
+    #! FECHA
+    now = datetime.now()
+    dia = str(now.day)
+    mes = str(now.month)
+    anio = str(now.year)
+    date = anio + '-' + mes + '-' + dia
+
+    #! MASCOTAS RESCATADAS DE LAS CITAS DIARIAS
+    mascotas = Cita.objects.filter(Fecha=date)
+
+    if request.POST:
+        accion = request.POST.get("btnAccion", "")
+        if accion == "Ingresar":
+            nombre= request.POST.get("cboMascota", "")
+            mascota = Mascota.objects.get(Nombre=nombre)
+            masc_id = mascota.IdMascota
+
+            #! DETALLE CITAS
+            cita_masc = Cita.objects.get(IdMascota=masc_id, Fecha=date)
+
+            return render(request, '../templates/administrador/citas/ing-cita.htm', {'masc':mascota, 'masc_id':masc_id, 'cita':cita_masc, 'date':date, 'mascotas':mascotas})
+        elif accion == "Guardar":
+            identificador = request.POST.get("txtIdentificador", "")
+            cita = Cita.objects.get(IdCita=identificador)
+
+            descripcion = request.POST.get("txtDescripcion", "")
+            cita.IdCita=identificador
+            cita.Descripcion=descripcion
+            cita.save()
+            return render(request,'../templates/administrador/citas/ing-cita.htm', {'date':date, 'mascotas':mascotas})
+    return render(request, '../templates/administrador/citas/ing-cita.htm', {'date':date, 'mascotas':mascotas})
+
+def modificarCita(request):
     user = auth.authenticate()
     username = request.user.username
-    citas = Cita.objects.all()
-    return render(request, '../templates/administrador/aprobar-cita.htm', {'username': username, 'citas':citas})
+
+    if request.POST:
+        accion = request.POST.get("btnAccion", "")
+        if accion == "Filtrar":
+            fecha = request.POST.get("txtFecha", "")
+            mascotas = Cita.objects.filter(Fecha=fecha)
+            return render(request, '../templates/administrador/citas/mod-cita.htm', {'fecha':fecha, 'mascotas':mascotas, 'username':username})
+        elif accion == "Ingresar":
+            nombre = request.POST.get("cboMascota", "")
+            mascota = Mascota.objects.get(Nombre=nombre)
+            masc_id = mascota.IdMascota
+
+            fecha = request.POST.get("txtFecha", "")
+            mascotas = Cita.objects.filter(Fecha=fecha)
+            cita = Cita.objects.get(IdMascota=masc_id, Fecha=fecha)
+            return render(request, '../templates/administrador/citas/mod-cita.htm', {'cita':cita, 'mascota':mascota, 'fecha':fecha, 'mascotas':mascotas, 'username':username})
+        elif accion == "Guardar":
+            identificador = request.POST.get("txtIdentificador", "")
+            descripcion = request.POST.get("txtDescripcion", "")
+            fecha = request.POST.get("txtFecha", "")
+
+            cita = Cita.objects.get(IdCita=identificador)
+            mascotas = Cita.objects.filter(Fecha=fecha)
+
+            cita.IdCita=identificador
+            cita.Descripcion=descripcion
+            cita.save()
+
+            return render(request, '../templates/administrador/citas/mod-cita.htm', {'fecha':fecha, 'mascotas':mascotas, 'username':username})
+    return render(request, '../templates/administrador/citas/mod-cita.htm', {'username':username})

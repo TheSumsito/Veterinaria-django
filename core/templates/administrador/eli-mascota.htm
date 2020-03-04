@@ -4,4 +4,60 @@
 {% endblock head %}
 
 {% block body %}
+<form method="POST" autocomplete="off">
+    {% csrf_token %}
+    <div class="eli-mascota">
+        <div class="titulo">
+            <h1>Eliminar Mascota</h1>
+        </div>
+        <div class="filtrar">
+            <div class="persona">
+                {% if rutpersona == null %}
+                    <p>Rut Persona</p>
+                    <input type="text" name="txtRut" id="txtRut">
+                    <span><input type="submit" name="btnAccion" value="Buscar"></span>
+                {% endif %}
+                {% if rutpersona != null %}
+                    <p>Rut Persona</p>
+                    <input type="text" name="txtRut" id="txtRut" value="{{rutpersona}}">
+                    <span><input type="submit" name="btnAccion" value="Buscar"></span>
+                {% endif %}
+            </div>
+            <div class="mascota">
+                <p>Nombre Mascota</p>
+                {% if rutpersona == null %}
+                    <select name="cboMascota" id="cboMascota" disabled>
+                        <option value=""></option>
+                    </select>
+                {% endif %}
+
+                {% if rutpersona != null %}
+                    <select name="cboMascota" id="cboMascota">
+                        <option value="">Seleccionar</option>
+                        {% for mas in mascotas %}
+                            <option value="{{mas.IdMascota}}">{{mas.Nombre}}</option>
+                        {% endfor %}
+                    </select>
+                {% endif %}
+            </div>
+            <div class="boton">
+                <input type="submit" name="btnAccion" value="Ingresar">
+            </div>
+        </div>
+        <div class="formulario">
+            <div class="identificador">
+                <p>Identificador</p>
+                <input type="text" name="txtIdentificador" id="txtIdentificador" value="{{mas.IdMascota}}" readonly>
+            </div>
+            <div class="nombre">
+                <p>Nombre Mascota</p>
+                <input type="text" name="txtNombre" id="txtNombre" value="{{mas.Nombre}}" disabled>
+            </div>
+            <div class="boton">
+                <input type="submit" name="btnAccion" value="Eliminar">
+            </div>
+        </div>
+    </div>    
+</form>
+
 {% endblock body %}
